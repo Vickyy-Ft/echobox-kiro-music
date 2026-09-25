@@ -1,15 +1,12 @@
 /**
  * Formats a duration in seconds into a "M+:SS" string with zero-padded seconds.
+ * Returns "0:00" for any non-finite, NaN, or negative input.
  *
- * @param {number} s - Non-negative integer number of seconds
- * @returns {string} Formatted duration, e.g. "0:00", "3:45", "61:01"
- *
- * @example
- * formatDuration(0)    // "0:00"
- * formatDuration(65)   // "1:05"
- * formatDuration(3661) // "61:01"
+ * @param {number} s
+ * @returns {string}
  */
 export function formatDuration(s) {
+  if (!isFinite(s) || isNaN(s) || s < 0) return '0:00';
   const totalSeconds = Math.floor(s);
   const minutes = Math.floor(totalSeconds / 60);
   const seconds = totalSeconds % 60;

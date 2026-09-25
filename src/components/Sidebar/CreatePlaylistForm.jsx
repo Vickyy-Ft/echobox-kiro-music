@@ -30,6 +30,7 @@ export function CreatePlaylistForm() {
 
   return (
     <form className="create-playlist-form" onSubmit={handleSubmit}>
+      <p className="create-playlist-form__label">Create a playlist</p>
       <div className="create-playlist-form__field">
         <input
           type="text"

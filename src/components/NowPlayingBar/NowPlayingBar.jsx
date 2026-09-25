@@ -1,3 +1,6 @@
+import { useContext } from 'react';
+import { PlayerContext } from '../../context/PlayerContext';
+import { CLEAR_ERROR } from '../../context/playerReducer';
 import { TrackInfo } from './TrackInfo';
 import { PlaybackControls } from './PlaybackControls';
 import { VolumeControl } from './VolumeControl';
@@ -12,12 +15,28 @@ import '../../styles/NowPlayingBar.css';
  * Requirements: 7.1, 7.2, 7.3
  */
 export function NowPlayingBar() {
+  const { state, dispatch } = useContext(PlayerContext);
+
   return (
     <footer
       className="now-playing-bar"
       role="contentinfo"
       aria-label="Now playing"
     >
+      {state.error && (
+        <div className="now-playing-bar__error" role="alert">
+          <span className="now-playing-bar__error-msg">{state.error}</span>
+          <button
+            className="now-playing-bar__error-dismiss"
+            onClick={() => dispatch({ type: CLEAR_ERROR })}
+            aria-label="Dismiss error"
+            type="button"
+          >
+            ✕
+          </button>
+        </div>
+      )}
+
       {/* Left: current track title + artist */}
       <div className="now-playing-bar__section now-playing-bar__section--left">
         <TrackInfo />

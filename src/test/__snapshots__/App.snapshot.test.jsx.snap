@@ -26,6 +26,11 @@ exports[`App — responsive dark theme snapshot (Req 15.1–15.5) > renders the 
       <form
         class="create-playlist-form"
       >
+        <p
+          class="create-playlist-form__label"
+        >
+          Create a playlist
+        </p>
         <div
           class="create-playlist-form__field"
         >
@@ -88,17 +93,17 @@ exports[`App — responsive dark theme snapshot (Req 15.1–15.5) > renders the 
             <span
               class="track-item__title"
             >
-              Example Track 1
+              Naanga Naalu Peru
             </span>
             <span
               class="track-item__artist"
             >
-              Artist A
+              Unknown Artist
             </span>
             <span
               class="track-item__duration"
             >
-              3:33
+              3:17
             </span>
             <span
               class="track-item__add-wrapper"
@@ -106,7 +111,7 @@ exports[`App — responsive dark theme snapshot (Req 15.1–15.5) > renders the 
               <button
                 aria-expanded="false"
                 aria-haspopup="menu"
-                aria-label="Add Example Track 1 to a playlist"
+                aria-label="Add Naanga Naalu Peru to a playlist"
                 class="track-item__add-btn"
                 title="Add to playlist"
                 type="button"
@@ -123,17 +128,17 @@ exports[`App — responsive dark theme snapshot (Req 15.1–15.5) > renders the 
             <span
               class="track-item__title"
             >
-              Example Track 2
+              Raathu Raasan
             </span>
             <span
               class="track-item__artist"
             >
-              Artist B
+              Unknown Artist
             </span>
             <span
               class="track-item__duration"
             >
-              3:07
+              3:15
             </span>
             <span
               class="track-item__add-wrapper"
@@ -141,7 +146,7 @@ exports[`App — responsive dark theme snapshot (Req 15.1–15.5) > renders the 
               <button
                 aria-expanded="false"
                 aria-haspopup="menu"
-                aria-label="Add Example Track 2 to a playlist"
+                aria-label="Add Raathu Raasan to a playlist"
                 class="track-item__add-btn"
                 title="Add to playlist"
                 type="button"

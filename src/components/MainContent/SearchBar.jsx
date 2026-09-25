@@ -29,6 +29,16 @@ export function SearchBar({ searchQuery, onSearch }) {
         autoComplete="off"
         spellCheck={false}
       />
+      {searchQuery.length > 0 && (
+        <button
+          type="button"
+          className="search-bar__clear"
+          aria-label="Clear search"
+          onClick={() => onSearch('')}
+        >
+          ✕
+        </button>
+      )}
     </div>
   );
 }

@@ -150,7 +150,7 @@
   border-right: 1px solid var(--color-border);
   display: flex;
   flex-direction: column;
-  height: 100%;
+  align-self: stretch;
   overflow: hidden;
 }
 
@@ -411,4 +411,17 @@
   .playlist-item__confirm {
     width: 100%;
   }
+}
+
+.create-playlist-form__label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.playlist-track-row--active .playlist-track-row__title {
+  color: var(--color-accent);
+  font-weight: var(--font-weight-medium);
 }

@@ -1,39 +1,39 @@
 /**
- * Clamps a seek target value to the valid range [0, duration].
+ * Clamps a seek target to [0, duration].
+ * Returns 0 for NaN/Infinity/negative inputs, and 0 if duration is invalid.
  *
- * Handles edge cases:
- * - NaN → returns 0
- * - Negative values → clamped to 0
- * - Values above duration (including Infinity) → clamped to duration
- *
- * @param {number} target - The desired seek position in seconds
- * @param {number} duration - The total duration of the track in seconds
- * @returns {number} A value in [0, duration]
+ * @param {number} target
+ * @param {number} duration
+ * @returns {number}
  */
 export function clampSeek(target, duration) {
+  // NaN is unrecoverable — return 0
   if (isNaN(target)) return 0;
+  // Invalid duration — nothing to clamp to
+  if (isNaN(duration) || !isFinite(duration) || duration <= 0) return 0;
+  // Now clamp: negative or -Infinity → 0, above duration or +Infinity → duration
   if (target < 0) return 0;
   if (target > duration) return duration;
   return target;
 }
 
 /**
- * Calculates the playback position as a percentage of the total duration.
+ * Calculates playback position as a percentage of total duration.
  *
- * @param {number} currentTime - Current playback position in seconds
- * @param {number} duration - Total duration in seconds
- * @returns {number} A value in [0, 100], or 0 if duration is 0 or negative
+ * @param {number} currentTime
+ * @param {number} duration
+ * @returns {number} Value in [0, 100], or 0 if duration is 0 or negative
  */
 export function seekPercent(currentTime, duration) {
   if (duration <= 0) return 0;
-  return (currentTime / duration) * 100;
+  return Math.min(100, Math.max(0, (currentTime / duration) * 100));
 }
 
 /**
- * Returns the index of the next track in the queue, or null if exhausted.
+ * Returns the index of the next track, or null if the queue is exhausted.
  *
- * @param {{ tracks: Array, currentIndex: number, sourceId: string|null }} queue
- * @returns {number|null} Next index, or null if at end or queue is empty
+ * @param {{ tracks: Array, currentIndex: number }} queue
+ * @returns {number|null}
  */
 export function nextTrack(queue) {
   if (!queue || queue.tracks.length === 0) return null;
@@ -43,10 +43,10 @@ export function nextTrack(queue) {
 }
 
 /**
- * Returns the index of the previous track in the queue, or null if at the start.
+ * Returns the index of the previous track, or null if at the start.
  *
- * @param {{ tracks: Array, currentIndex: number, sourceId: string|null }} queue
- * @returns {number|null} Previous index, or null if at start or queue is empty
+ * @param {{ tracks: Array, currentIndex: number }} queue
+ * @returns {number|null}
  */
 export function previousTrack(queue) {
   if (!queue || queue.tracks.length === 0) return null;
@@ -55,14 +55,14 @@ export function previousTrack(queue) {
 }
 
 /**
- * Builds a queue from a playlist, starting at the first track.
+ * Builds a queue from a playlist, starting at track 0.
  *
  * @param {{ id: string, tracks: Array }} playlist
  * @returns {{ tracks: Array, currentIndex: number, sourceId: string }}
  */
 export function populateQueueFromPlaylist(playlist) {
   return {
-    tracks: playlist.tracks,
+    tracks: [...playlist.tracks],
     currentIndex: 0,
     sourceId: playlist.id,
   };

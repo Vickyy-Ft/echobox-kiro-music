@@ -189,3 +189,45 @@
     width: 60px;
   }
 }
+
+/* ── Error banner ── */
+.now-playing-bar__error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-5);
+  background-color: var(--color-error, #ff5a5f);
+  color: #fff;
+  font-size: var(--font-size-sm);
+  z-index: calc(var(--z-now-playing, 100) + 1);
+}
+
+.now-playing-bar__error-msg {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.now-playing-bar__error-dismiss {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 2px 4px;
+  border-radius: var(--radius-sm);
+}
+
+.now-playing-bar__error-dismiss:hover {
+  background: rgba(255,255,255,0.2);
+}

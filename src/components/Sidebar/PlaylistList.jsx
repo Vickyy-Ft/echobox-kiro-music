@@ -1,88 +1,101 @@
 import { useContext, useState } from 'react';
 import { PlayerContext } from '../../context/PlayerContext';
 import { LOAD_TRACK } from '../../context/playerReducer';
-import { PlaylistItem } from './PlaylistItem';
 
 /**
  * PlaylistList — renders all user playlists in the sidebar.
  *
- * Reads `playlists`, `state`, `dispatch`, `audioEngine`, and `playlistActions`
- * from PlayerContext. Manages a `pendingDeleteId` local state so deletion
- * requires a two-step confirmation.
+ * Fixes applied:
+ *  C1  — loadTrack(track, queue) replaces dual dispatch pattern
+ *  PQ1 — handleRemoveTrack syncs state.queue when active playlist is affected
+ *  PQ2 — handleDeleteConfirm clears queue when deleting the active playlist
+ *  PQ3 — currently playing track is highlighted in expanded track list
+ *  PQ4 — queue built with [...playlist.tracks] defensive copy
+ *  PQ5 — handlePlay resumes instead of restarting if playlist is already active
+ *  M5  — outer wrapper changed from ul>div to div>... (valid HTML)
  *
- * When a playlist is active (i.e. its id matches `state.queue.sourceId`), its
- * tracks are expanded inline below the playlist item. Each track row has a
- * remove button that calls `playlistActions.removeTrack` (Req 11.1, 11.2).
- *
- * Requirements: 11.1, 11.2, 12.2, 13.1, 13.2
+ * Requirements: 11.1, 11.2, 12.1, 12.2, 13.1, 13.2
  */
 export function PlaylistList() {
   const { state, dispatch, audioEngine, playlists, playlistActions } =
     useContext(PlayerContext);
 
-  /** ID of the playlist currently awaiting delete confirmation */
   const [pendingDeleteId, setPendingDeleteId] = useState(null);
 
-  /** The active playlist is whichever one populated the current queue */
   const activePlaylistId = state.queue.sourceId;
 
-  /**
-   * Play a playlist — build a queue from its tracks and load the first one.
-   * No-ops when the playlist has no tracks (Req 12.2).
-   */
+  // PQ5: resume if already active, otherwise load from track 0
   function handlePlay(playlist) {
     if (!playlist.tracks.length) return;
 
+    if (state.queue.sourceId === playlist.id && state.currentTrack) {
+      if (state.status === 'paused' || state.status === 'idle') {
+        audioEngine.play();
+      }
+      return;
+    }
+
+    // PQ4: defensive copy so queue.tracks is decoupled from playlist.tracks ref
     const queue = {
-      tracks: playlist.tracks,
+      tracks: [...playlist.tracks],
       currentIndex: 0,
       sourceId: playlist.id,
     };
-
-    dispatch({ type: LOAD_TRACK, track: playlist.tracks[0], queue });
-    audioEngine.loadTrack(playlist.tracks[0]);
-    audioEngine.play();
+    audioEngine.loadTrack(playlist.tracks[0], queue);
   }
 
-  /**
-   * Play a specific track within an active playlist's expanded list.
-   * Builds the queue starting from the chosen track's index (Req 12.1).
-   */
   function handleTrackPlay(playlist, track, trackIndex) {
     const queue = {
-      tracks: playlist.tracks,
+      tracks: [...playlist.tracks],
       currentIndex: trackIndex,
       sourceId: playlist.id,
     };
-
-    dispatch({ type: LOAD_TRACK, track, queue });
-    audioEngine.loadTrack(track);
-    audioEngine.play();
+    audioEngine.loadTrack(track, queue);
   }
 
-  /**
-   * Remove a track from a playlist (Req 11.1, 11.2).
-   * Playback of the removed track continues if it is currently playing.
-   */
+  // PQ1: after removing a track from an active playlist, sync state.queue
   function handleRemoveTrack(playlistId, trackId) {
     playlistActions.removeTrack(playlistId, trackId);
+
+    if (state.queue.sourceId === playlistId) {
+      const playlist = playlists.find((p) => p.id === playlistId);
+      if (!playlist) return;
+
+      const newTracks = playlist.tracks.filter((t) => t.id !== trackId);
+      const removedIndex = playlist.tracks.findIndex((t) => t.id === trackId);
+      let newIndex = state.queue.currentIndex;
+
+      if (removedIndex < newIndex) newIndex = Math.max(0, newIndex - 1);
+      if (removedIndex === newIndex) newIndex = Math.min(newIndex, newTracks.length - 1);
+
+      dispatch({
+        type: LOAD_TRACK,
+        track: state.currentTrack,
+        queue: {
+          tracks: newTracks,
+          currentIndex: Math.max(0, newIndex),
+          sourceId: playlistId,
+        },
+      });
+    }
   }
 
-  /**
-   * First click on delete sets pendingDeleteId (shows confirmation).
-   * If confirmation is already showing for a different playlist, replace it.
-   */
   function handleDeleteRequest(playlist) {
     setPendingDeleteId(playlist.id);
   }
 
-  /** User confirmed — remove the playlist and reset pending state (Req 13.2) */
+  // PQ2: clear queue + stop audio when the active playlist is deleted
   function handleDeleteConfirm() {
+    if (state.queue.sourceId === pendingDeleteId) {
+      if (['playing', 'paused', 'loading'].includes(state.status)) {
+        audioEngine.pause();
+      }
+      dispatch({ type: 'QUEUE_EXHAUSTED' });
+    }
     playlistActions.remove(pendingDeleteId);
     setPendingDeleteId(null);
   }
 
-  /** User cancelled — reset pending state (Req 13.3) */
   function handleDeleteCancel() {
     setPendingDeleteId(null);
   }
@@ -92,42 +105,70 @@ export function PlaylistList() {
       {playlists.length === 0 ? (
         <p className="playlist-list__empty">No playlists yet. Create one below!</p>
       ) : (
-        <ul className="playlist-list__items">
+        // M5 fix: div wrapper is valid; avoids div-inside-ul HTML violation
+        <div className="playlist-list__items">
           {playlists.map((playlist) => {
             const isActive = playlist.id === activePlaylistId;
             return (
-              <div key={playlist.id}>
-                <PlaylistItem
-                  playlist={playlist}
-                  onPlay={handlePlay}
-                  onDelete={handleDeleteRequest}
-                  isActive={isActive}
-                />
+              <div key={playlist.id} className="playlist-list__item-group">
+                {/* PlaylistItem renders its own <li> — keep it inside the div */}
+                <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+                  <li className={`playlist-item${isActive ? ' playlist-item--active' : ''}`}>
+                    <button
+                      className="playlist-item__play"
+                      onClick={() => handlePlay(playlist)}
+                      aria-label={`Play ${playlist.name}`}
+                      disabled={playlist.tracks.length === 0}
+                      title={playlist.tracks.length === 0 ? 'No tracks in this playlist' : undefined}
+                    >
+                      ▶
+                    </button>
+                    <div className="playlist-item__info">
+                      <span className="playlist-item__name">{playlist.name}</span>
+                      <span className="playlist-item__count">
+                        {playlist.tracks.length} track{playlist.tracks.length !== 1 ? 's' : ''}
+                      </span>
+                    </div>
+                    <button
+                      className="playlist-item__delete"
+                      onClick={() => handleDeleteRequest(playlist)}
+                      aria-label={`Delete ${playlist.name}`}
+                    >
+                      ✕
+                    </button>
+                  </li>
+                </ul>
 
-                {/* Expanded track list shown when this playlist is active */}
+                {/* PQ3: expanded track list with active-track highlight */}
                 {isActive && (
                   <ul className="playlist-tracks" aria-label={`Tracks in ${playlist.name}`}>
                     {playlist.tracks.length === 0 ? (
                       <li className="playlist-tracks__empty">No tracks in this playlist</li>
                     ) : (
-                      playlist.tracks.map((track, index) => (
-                        <li key={track.id} className="playlist-track-row">
-                          <button
-                            className="playlist-track-row__title"
-                            onClick={() => handleTrackPlay(playlist, track, index)}
-                            aria-label={`Play ${track.title}`}
+                      playlist.tracks.map((track, index) => {
+                        const isCurrentTrack = state.currentTrack?.id === track.id;
+                        return (
+                          <li
+                            key={track.id}
+                            className={`playlist-track-row${isCurrentTrack ? ' playlist-track-row--active' : ''}`}
                           >
-                            {track.title}
-                          </button>
-                          <button
-                            className="playlist-track-row__remove"
-                            onClick={() => handleRemoveTrack(playlist.id, track.id)}
-                            aria-label={`Remove ${track.title} from playlist`}
-                          >
-                            ✕
-                          </button>
-                        </li>
-                      ))
+                            <button
+                              className="playlist-track-row__title"
+                              onClick={() => handleTrackPlay(playlist, track, index)}
+                              aria-label={`Play ${track.title}`}
+                            >
+                              {isCurrentTrack && '▶ '}{track.title}
+                            </button>
+                            <button
+                              className="playlist-track-row__remove"
+                              onClick={() => handleRemoveTrack(playlist.id, track.id)}
+                              aria-label={`Remove ${track.title} from playlist`}
+                            >
+                              ✕
+                            </button>
+                          </li>
+                        );
+                      })
                     )}
                   </ul>
                 )}
@@ -160,7 +201,7 @@ export function PlaylistList() {
               </div>
             );
           })}
-        </ul>
+        </div>
       )}
     </section>
   );

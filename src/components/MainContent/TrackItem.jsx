@@ -70,7 +70,7 @@ export function TrackItem({ track, onTrackSelect }) {
     if (err) {
       setFeedback({ type: 'error', msg: err });
     } else {
-      setFeedback({ type: 'success', msg: 'Added!' });
+      setFeedback({ type: 'success', msg: `Added to "${playlist.name}"` });
     }
     setMenuOpen(false);
   };
