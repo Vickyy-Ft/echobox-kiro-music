@@ -1,30 +1,13 @@
-/* EchoBox Music — CSS Custom Properties (Dark Theme) */
+/* EchoBox Music — CSS Custom Properties with Theme Support */
 
 :root {
-  /* ── Background layers ── */
-  --color-bg-base:      #0f0f13;   /* app background */
-  --color-bg-surface:   #1a1a24;   /* cards, sidebar, bars */
-  --color-bg-elevated:  #24243a;   /* hover states, active rows */
-  --color-bg-overlay:   #2e2e48;   /* modals, tooltips */
-
-  /* ── Text ── */
-  --color-text-primary:   #e8e8f0;  /* headings, track titles */
-  --color-text-secondary: #9898b0;  /* artists, meta, placeholders */
-  --color-text-muted:     #5a5a72;  /* disabled, de-emphasised */
-
-  /* ── Accent / interactive ── */
-  --color-accent:         #7c6af7;  /* primary accent (purple) */
-  --color-accent-hover:   #9484ff;
-  --color-accent-active:  #6354e0;
-
-  /* ── Feedback ── */
-  --color-error:   #ff5a5f;
-  --color-success: #3ecf8e;
-  --color-warning: #f9a825;
-
-  /* ── Borders ── */
-  --color-border:       #2a2a40;
-  --color-border-focus: var(--color-accent);
+  /* ── EchoBox Brand Colors ── */
+  --echo-purple:      #7c6af7;  /* Primary brand color */
+  --echo-purple-dark: #6354e0;
+  --echo-purple-light: #9484ff;
+  --echo-teal:        #3ecf8e;  /* Secondary accent */
+  --echo-teal-dark:   #2eb87a;
+  --echo-blue:        #47bfff;  /* Tertiary accent */
 
   /* ── Spacing scale ── */
   --space-1:  0.25rem;   /*  4px */
@@ -43,7 +26,7 @@
   --radius-pill: 9999px;
 
   /* ── Typography ── */
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-family: 'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --font-size-xs:   0.75rem;   /* 12px */
   --font-size-sm:   0.875rem;  /* 14px */
   --font-size-base: 1rem;      /* 16px */
@@ -64,3 +47,51 @@
   --now-playing-height:  80px;
   --z-now-playing:       100;
 }
+
+/* ── Dark Theme (default) ── */
+:root,
+[data-theme="dark"] {
+  --color-bg-base:      #0f0f13;   /* app background */
+  --color-bg-surface:   #1a1a24;   /* cards, sidebar, bars */
+  --color-bg-elevated:  #24243a;   /* hover states, active rows */
+  --color-bg-overlay:   #2e2e48;   /* modals, tooltips */
+
+  --color-text-primary:   #e8e8f0;  /* headings, track titles */
+  --color-text-secondary: #9898b0;  /* artists, meta, placeholders */
+  --color-text-muted:     #5a5a72;  /* disabled, de-emphasised */
+
+  --color-accent:         var(--echo-purple);
+  --color-accent-hover:   var(--echo-purple-light);
+  --color-accent-active:  var(--echo-purple-dark);
+
+  --color-error:   #ff5a5f;
+  --color-success: var(--echo-teal);
+  --color-warning: #f9a825;
+
+  --color-border:       #2a2a40;
+  --color-border-focus: var(--color-accent);
+}
+
+/* ── Light Theme ── */
+[data-theme="light"] {
+  --color-bg-base:      #f5f5f7;   /* light app background */
+  --color-bg-surface:   #ffffff;   /* white cards, sidebar, bars */
+  --color-bg-elevated:  #e8e8ec;   /* hover states */
+  --color-bg-overlay:   #d8d8e0;   /* modals, tooltips */
+
+  --color-text-primary:   #1a1a24;  /* dark text on light bg */
+  --color-text-secondary: #5a5a72;  /* medium gray text */
+  --color-text-muted:     #9898b0;  /* light gray text */
+
+  --color-accent:         var(--echo-purple);
+  --color-accent-hover:   var(--echo-purple-dark);
+  --color-accent-active:  var(--echo-purple-light);
+
+  --color-error:   #d32f2f;
+  --color-success: var(--echo-teal-dark);
+  --color-warning: #f57c00;
+
+  --color-border:       #d8d8e0;
+  --color-border-focus: var(--color-accent);
+}
+

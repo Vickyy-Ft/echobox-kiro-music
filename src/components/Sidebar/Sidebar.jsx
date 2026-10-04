@@ -1,11 +1,13 @@
 import '../../styles/Sidebar.css';
 import { PlaylistList } from './PlaylistList';
 import { CreatePlaylistForm } from './CreatePlaylistForm';
+import { ThemeToggle } from '../ThemeToggle';
 
 /**
- * Sidebar — fixed left panel containing the user's playlists.
+ * Sidebar — fixed left panel containing the user's playlists and theme toggle.
  *
  * Renders a labelled landmark (`<aside>`) that wraps:
+ *   - `ThemeToggle` — switch between dark and light themes
  *   - `PlaylistList`  — scrollable list of user playlists (Req 9.1, 12.2)
  *   - `CreatePlaylistForm` — pinned at the bottom (Req 9.1)
  *
@@ -17,7 +19,10 @@ import { CreatePlaylistForm } from './CreatePlaylistForm';
 export function Sidebar() {
   return (
     <aside className="sidebar" aria-label="Playlists">
-      <h2 className="sidebar__heading">Your Playlists</h2>
+      <div className="sidebar__header">
+        <h2 className="sidebar__heading">Your Playlists</h2>
+        <ThemeToggle />
+      </div>
       <PlaylistList />
       <CreatePlaylistForm />
     </aside>
