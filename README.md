@@ -2,9 +2,12 @@
 
 A modern, Spotify-inspired web music player built with React and Vite. EchoBox Music delivers a seamless audio experience for playing local MP3 and WAV files directly in your browser using the HTML5 Audio API.
 
+> **Built with ❤️ as part of Kiro University Challenge 2026**
+
 ![EchoBox Music](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green)
+![Kiro University](https://img.shields.io/badge/Kiro-University%202026-7c6af7)
 
 ## ✨ Features
 
