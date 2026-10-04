@@ -54,7 +54,7 @@
   --color-bg-base:      var(--monster-black);      /* Pure black background */
   --color-bg-surface:   #0a0000;                   /* Subtle dark red tint */
   --color-bg-elevated:  var(--monster-maroon);     /* Deep maroon hover */
-  --color-bg-overlay:   #1a0000;                   /* Dark overlay */
+  --color-bg-overlay:   rgba(26, 0, 0, 0.95);      /* Dark transparent overlay */
 
   --color-text-primary:   #ffffff;                 /* Pure white text */
   --color-text-secondary: #ffaaaa;                 /* Light red text */
@@ -71,35 +71,39 @@
   --color-border:       var(--monster-maroon);
   --color-border-focus: var(--monster-blood);
   
-  /* Monster effects */
+  /* Dark theme glass effects */
+  --glass-bg: rgba(10, 0, 0, 0.6);
+  --glass-border: rgba(255, 0, 0, 0.3);
   --monster-glow: 0 0 20px var(--monster-red-glow);
   --monster-shadow: 0 4px 12px var(--monster-red-shadow);
 }
 
-/* ── Light Theme (Vampire Day Mode) ── */
+/* ── Light Theme (Kids Warm Mode) ── */
 [data-theme="light"] {
-  --color-bg-base:      #1a0000;                   /* Dark red base */
-  --color-bg-surface:   #2a0000;                   /* Slightly lighter red */
-  --color-bg-elevated:  var(--monster-maroon);     /* Maroon elevated */
-  --color-bg-overlay:   var(--monster-red);        /* Red overlay */
+  --color-bg-base:      #FFFAF3;                   /* Warm white cream */
+  --color-bg-surface:   #FFF2DB;                   /* Soft beige */
+  --color-bg-elevated:  #FFE5BF;                   /* Peach beige */
+  --color-bg-overlay:   rgba(255, 229, 191, 0.95); /* Transparent peach */
 
-  --color-text-primary:   #ffffff;                 /* White text */
-  --color-text-secondary: #ffcccc;                 /* Light pink text */
-  --color-text-muted:     #ff9999;                 /* Pink muted */
+  --color-text-primary:   #2a0000;                 /* Dark red-brown */
+  --color-text-secondary: #8b4513;                 /* Saddle brown */
+  --color-text-muted:     #cd853f;                 /* Peru brown */
 
-  --color-accent:         var(--monster-blood);    /* Blood red accent */
-  --color-accent-hover:   #ff3333;                 /* Lighter red */
-  --color-accent-active:  var(--monster-red);      /* Dark red */
+  --color-accent:         #F62440;                 /* Vibrant red */
+  --color-accent-hover:   #ff4458;                 /* Lighter red */
+  --color-accent-active:  #d01f38;                 /* Darker red */
 
-  --color-error:   var(--monster-blood);
-  --color-success: #00cc00;                        /* Dark green */
-  --color-warning: #ff8800;                        /* Orange */
+  --color-error:   #F62440;
+  --color-success: #32cd32;                        /* Lime green */
+  --color-warning: #ff8c00;                        /* Dark orange */
 
-  --color-border:       var(--monster-red);
-  --color-border-focus: var(--monster-blood);
+  --color-border:       #FFE5BF;
+  --color-border-focus: #F62440;
   
-  /* Monster effects for light theme */
-  --monster-glow: 0 0 15px rgba(255, 0, 0, 0.4);
-  --monster-shadow: 0 3px 10px rgba(131, 0, 0, 0.6);
+  /* Light theme glass effects */
+  --glass-bg: rgba(255, 242, 219, 0.7);
+  --glass-border: rgba(246, 36, 64, 0.2);
+  --monster-glow: 0 0 15px rgba(246, 36, 64, 0.3);
+  --monster-shadow: 0 4px 15px rgba(246, 36, 64, 0.2);
 }
 

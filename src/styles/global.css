@@ -27,8 +27,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   
-  /* Monster theme: subtle red glow background */
-  background-image: radial-gradient(circle at 50% 50%, rgba(131, 0, 0, 0.1) 0%, transparent 50%);
+  /* Monster theme: animated background with floating gradient */
+  background-image: radial-gradient(circle at 50% 50%, rgba(131, 0, 0, 0.15) 0%, transparent 50%);
+  background-size: 200% 200%;
+  animation: background-float 20s ease-in-out infinite;
+}
+
+@keyframes background-float {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 /* ── Reset elements ── */
@@ -176,4 +187,42 @@ button:not(:disabled):hover {
                0 0 20px var(--monster-red),
                0 0 30px var(--monster-maroon);
   animation: blood-drip 2s ease-in-out infinite alternate;
+}
+
+/* ── Advanced Hover Effects ── */
+
+/* Smooth scale on interactive elements */
+button:not(:disabled):active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
+}
+
+/* Ripple effect */
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 var(--color-accent);
+  }
+  100% {
+    box-shadow: 0 0 0 20px transparent;
+  }
+}
+
+/* Floating effect for cards */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Shimmer loading effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
 }
