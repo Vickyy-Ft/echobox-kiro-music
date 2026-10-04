@@ -21,8 +21,50 @@ export function PlaylistList() {
     useContext(PlayerContext);
 
   const [pendingDeleteId, setPendingDeleteId] = useState(null);
+  const [importError, setImportError] = useState(null);
 
   const activePlaylistId = state.queue.sourceId;
+
+  // Handle export: download playlist as JSON
+  function handleExport(playlist) {
+    const exported = playlistActions.exportPlaylist(playlist.id);
+    if (!exported) return;
+
+    const dataStr = JSON.stringify(exported, null, 2);
+    const dataBlob = new Blob([dataStr], { type: 'application/json' });
+    const url = URL.createObjectURL(dataBlob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `${playlist.name.replace(/[^a-z0-9]/gi, '_').toLowerCase()}_playlist.json`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  }
+
+  // Handle import: read JSON file and import playlist
+  function handleImport(event) {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const playlistData = JSON.parse(e.target?.result);
+        const error = playlistActions.importPlaylist(playlistData);
+        if (error) {
+          setImportError(error);
+          setTimeout(() => setImportError(null), 5000);
+        }
+      } catch (_) {
+        setImportError('Invalid JSON file.');
+        setTimeout(() => setImportError(null), 5000);
+      }
+    };
+    reader.readAsText(file);
+    // Reset input so same file can be imported again
+    event.target.value = '';
+  }
 
   // PQ5: resume if already active, otherwise load from track 0
   function handlePlay(playlist) {
@@ -102,6 +144,25 @@ export function PlaylistList() {
 
   return (
     <section className="playlist-list">
+      {importError && (
+        <div className="playlist-list__import-error" role="alert">
+          {importError}
+        </div>
+      )}
+      
+      <div className="playlist-list__import">
+        <input
+          type="file"
+          id="import-playlist"
+          accept=".json"
+          onChange={handleImport}
+          style={{ display: 'none' }}
+        />
+        <label htmlFor="import-playlist" className="playlist-list__import-btn">
+          📁 Import Playlist
+        </label>
+      </div>
+
       {playlists.length === 0 ? (
         <p className="playlist-list__empty">No playlists yet. Create one below!</p>
       ) : (
@@ -129,6 +190,15 @@ export function PlaylistList() {
                         {playlist.tracks.length} track{playlist.tracks.length !== 1 ? 's' : ''}
                       </span>
                     </div>
+                    <button
+                      className="playlist-item__export"
+                      onClick={() => handleExport(playlist)}
+                      aria-label={`Export ${playlist.name}`}
+                      title="Export playlist as JSON"
+                      disabled={playlist.tracks.length === 0}
+                    >
+                      ↓
+                    </button>
                     <button
                       className="playlist-item__delete"
                       onClick={() => handleDeleteRequest(playlist)}

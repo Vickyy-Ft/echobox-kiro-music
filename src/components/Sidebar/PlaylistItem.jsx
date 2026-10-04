@@ -4,18 +4,20 @@ import '../../styles/Sidebar.css';
  * PlaylistItem — renders a single playlist row in the sidebar.
  *
  * Highlights the row when the playlist matches the currently active playlist.
- * Emits `onPlay(playlist)` when the play button is clicked and
- * `onDelete(playlist)` when the delete button is clicked.
+ * Emits `onPlay(playlist)` when the play button is clicked,
+ * `onDelete(playlist)` when the delete button is clicked, and
+ * `onExport(playlist)` when the export button is clicked.
  *
  * Props:
  *   playlist  {object}   — playlist data: { id, name, tracks: [...] }
  *   onPlay    {function} — callback invoked when the user clicks play
  *   onDelete  {function} — callback invoked when the user clicks delete
+ *   onExport  {function} — callback invoked when the user clicks export
  *   isActive  {boolean}  — applies active highlight class when true
  *
  * Requirements: 12.2, 13.1
  */
-export function PlaylistItem({ playlist, onPlay, onDelete, isActive }) {
+export function PlaylistItem({ playlist, onPlay, onDelete, onExport, isActive }) {
   const trackCount = playlist.tracks.length;
 
   return (
@@ -33,6 +35,14 @@ export function PlaylistItem({ playlist, onPlay, onDelete, isActive }) {
           {trackCount} track{trackCount !== 1 ? 's' : ''}
         </span>
       </div>
+      <button
+        className="playlist-item__export"
+        onClick={() => onExport(playlist)}
+        aria-label={`Export ${playlist.name}`}
+        title="Export playlist as JSON"
+      >
+        ↓
+      </button>
       <button
         className="playlist-item__delete"
         onClick={() => onDelete(playlist)}

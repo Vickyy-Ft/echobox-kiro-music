@@ -165,5 +165,67 @@ export function usePlaylistManager() {
     return null;
   };
 
-  return { playlists, create, remove, addTrack, removeTrack };
+  /**
+   * Exports a playlist as JSON for download.
+   * 
+   * @param {string} id - Playlist id to export
+   * @returns {Object|null} Playlist object or null if not found
+   */
+  const exportPlaylist = (id) => {
+    const playlist = playlists.find((p) => p.id === id);
+    return playlist || null;
+  };
+
+  /**
+   * Imports a playlist from JSON data.
+   * 
+   * Validation:
+   *   1. Check required fields (name, tracks)
+   *   2. Reject case-insensitive duplicate names
+   *   3. Generate new ID to avoid conflicts
+   *   4. Persist and update state
+   * 
+   * @param {Object} playlistData - Playlist object from JSON
+   * @returns {string|null} Error string on failure, null on success
+   */
+  const importPlaylist = (playlistData) => {
+    // Validate required fields
+    if (!playlistData || !playlistData.name || !Array.isArray(playlistData.tracks)) {
+      return 'Invalid playlist file. Missing required fields.';
+    }
+
+    const trimmed = playlistData.name.trim();
+    if (trimmed.length === 0) {
+      return 'Playlist name cannot be blank.';
+    }
+
+    // Check for duplicate name (case-insensitive)
+    const isDuplicate = playlists.some(
+      (p) => p.name.trim().toLowerCase() === trimmed.toLowerCase()
+    );
+    if (isDuplicate) {
+      return `A playlist named "${trimmed}" already exists.`;
+    }
+
+    // Create new playlist with fresh ID
+    const newPlaylist = {
+      id: crypto.randomUUID(),
+      name: trimmed,
+      tracks: playlistData.tracks.filter(
+        (track) => track && track.id && track.title && track.artist && track.src
+      ),
+    };
+
+    const updated = [...playlists, newPlaylist];
+    try {
+      persist(updated);
+    } catch (_) {
+      return 'Could not import the playlist. Storage may be full or unavailable.';
+    }
+
+    setPlaylists(updated);
+    return null;
+  };
+
+  return { playlists, create, remove, addTrack, removeTrack, exportPlaylist, importPlaylist };
 }
