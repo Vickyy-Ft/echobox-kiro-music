@@ -205,13 +205,21 @@
   line-height: 1;
   cursor: pointer;
   opacity: 1;
-  transition: color var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast);
+  transition: all var(--transition-fast);
+  position: relative;
 }
 
 .track-item__add-btn:hover {
   color: var(--color-text-primary);
   border-color: var(--color-accent);
   background-color: rgba(124, 106, 247, 0.1);
+  transform: scale(1.15);
+  box-shadow: 0 0 12px rgba(124, 106, 247, 0.3);
+}
+
+.track-item__add-btn:active:not(:disabled) {
+  animation: button-press 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 0 0 15px var(--color-accent);
 }
 
 .track-item__add-btn:focus-visible {

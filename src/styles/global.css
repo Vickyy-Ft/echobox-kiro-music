@@ -153,10 +153,24 @@ svg {
 
 /* ── Monster Theme Effects ── */
 
+/* Base button transitions */
+button:not(:disabled) {
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
 /* Spooky button glow on hover */
 button:not(:disabled):hover {
   box-shadow: var(--monster-glow);
-  transition: box-shadow var(--transition-fast);
+  transition: all var(--transition-fast);
+  transform: translateY(-2px);
+}
+
+/* Enhanced active state with multiple effects */
+button:not(:disabled):active {
+  transform: scale(0.92) translateY(1px);
+  transition: transform 0.05s ease;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3), var(--monster-glow);
 }
 
 /* Pulsing effect for accent elements */
@@ -189,12 +203,111 @@ button:not(:disabled):hover {
   animation: blood-drip 2s ease-in-out infinite alternate;
 }
 
-/* ── Advanced Hover Effects ── */
+/* ── Advanced Button Animations ── */
+
+/* Ripple effect on click */
+@keyframes button-ripple {
+  0% {
+    box-shadow: 0 0 0 0 var(--color-accent);
+  }
+  50% {
+    box-shadow: 0 0 0 10px var(--color-accent);
+  }
+  100% {
+    box-shadow: 0 0 0 20px transparent;
+  }
+}
+
+/* Bounce effect */
+@keyframes button-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-3px);
+  }
+  75% {
+    transform: translateY(-1px);
+  }
+}
+
+/* Pulse grow effect */
+@keyframes button-pulse-grow {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
+
+/* Glow spread effect */
+@keyframes glow-spread {
+  0% {
+    box-shadow: 0 0 0 0 var(--color-accent);
+    opacity: 1;
+  }
+  100% {
+    box-shadow: 0 0 0 15px transparent;
+    opacity: 0;
+  }
+}
+
+/* Shake effect for emphasis */
+@keyframes button-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+}
+
+/* Press and release effect */
+@keyframes button-press {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(0.93) translateY(2px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Spin effect for loading states */
+@keyframes button-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Fade in pop effect */
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ── Hover Effects ── */
 
 /* Smooth scale on interactive elements */
 button:not(:disabled):active {
-  transform: scale(0.95);
-  transition: transform 0.1s ease;
+  animation: button-press 0.3s ease;
 }
 
 /* Ripple effect */
