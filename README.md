@@ -1,6 +1,6 @@
 # 🎵 EchoBox Music
 
-A modern, Spotify-inspired web music player built with React and Vite. EchoBox Music delivers a seamless audio experience for playing local MP3 and WAV files directly in your browser using the HTML5 Audio API.
+A modern, feature-rich web music player built with React and Vite. EchoBox Music delivers a powerful audio experience for playing local MP3 and WAV files directly in your browser, featuring keyboard shortcuts, theme customization, and advanced playlist management.
 
 > **Built with ❤️ as part of Kiro University Challenge 2026**
 
@@ -12,16 +12,18 @@ A modern, Spotify-inspired web music player built with React and Vite. EchoBox M
 ## ✨ Features
 
 ### 🎧 **Playback Controls**
-- **Play/Pause** - Smooth playback with debounced controls to prevent audio glitching
+- **Play/Pause** - Smooth playback with debounced controls and keyboard shortcuts (Spacebar)
 - **Seek** - Jump to any position in a track with real-time progress tracking
 - **Volume Control** - Adjust volume with persistence across sessions
-- **Previous/Next** - Navigate through your queue seamlessly
+- **Previous/Next** - Navigate through your queue with arrow keys
 - **Auto-Advance** - Automatically plays the next track when one finishes
+- **⌨️ Keyboard Shortcuts** - Control playback without touching your mouse!
 
 ### 📝 **Playlist Management**
 - **Create Playlists** - Organize your music into custom collections
-- **Add/Remove Tracks** - Build your perfect playlist with drag-and-drop simplicity
+- **Add/Remove Tracks** - Build your perfect playlist with ease
 - **Delete Playlists** - Clean up with confirmation prompts
+- **Import/Export** - Share playlists with friends via JSON files
 - **Persistent Storage** - Playlists saved to localStorage, survive page refreshes
 
 ### 🔍 **Search & Discovery**
@@ -30,13 +32,15 @@ A modern, Spotify-inspired web music player built with React and Vite. EchoBox M
 - **Active Track Highlighting** - Always know what's playing
 
 ### 🎨 **Modern UI/UX**
-- **Dark Theme** - Easy on the eyes with a sleek purple accent color
+- **Dark/Light Theme Toggle** - Choose your preferred viewing experience
+- **Custom Color Scheme** - Unique purple and teal accents
 - **Responsive Design** - Works beautifully on desktop and mobile
 - **Accessibility** - WCAG AA compliant with keyboard navigation and ARIA labels
 - **Fixed Now Playing Bar** - Always visible controls at the bottom
 
 ### 💾 **Smart Persistence**
 - **Volume Memory** - Your preferred volume level is remembered
+- **Theme Preference** - Your chosen theme persists across sessions
 - **Playlist Storage** - All playlists persist across sessions
 - **Queue State** - Active queue maintained during playback
 
