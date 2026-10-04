@@ -23,17 +23,56 @@ export function PlayerProvider({ children }) {
 
   const audioEngine = useAudioEngine(dispatch);
 
-  const { playlists, create, remove, addTrack, removeTrack } = usePlaylistManager();
+  const { playlists, create, remove, addTrack, removeTrack, exportPlaylist, importPlaylist } = usePlaylistManager();
 
   const playlistActions = useMemo(
-    () => ({ create, remove, addTrack, removeTrack }),
-    [create, remove, addTrack, removeTrack]
+    () => ({ create, remove, addTrack, removeTrack, exportPlaylist, importPlaylist }),
+    [create, remove, addTrack, removeTrack, exportPlaylist, importPlaylist]
   );
 
   // C3 fix: keep audioEngine's internal stateRef current
   useEffect(() => {
     audioEngine.syncState(state);
   }, [state, audioEngine]);
+
+  // Keyboard shortcuts: Spacebar = play/pause, ArrowLeft = previous, ArrowRight = next
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      // Ignore if user is typing in input/textarea
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+        return;
+      }
+
+      switch (e.code) {
+        case 'Space':
+          e.preventDefault(); // Prevent page scroll
+          if (state.currentTrack) {
+            if (state.status === 'playing') {
+              audioEngine.pause();
+            } else if (state.status === 'paused' || state.status === 'idle') {
+              audioEngine.play();
+            }
+          }
+          break;
+
+        case 'ArrowLeft':
+          e.preventDefault();
+          audioEngine.skipPrevious();
+          break;
+
+        case 'ArrowRight':
+          e.preventDefault();
+          audioEngine.skipNext();
+          break;
+
+        default:
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [state.currentTrack, state.status, audioEngine]);
 
   // C4 fix: only rebuild context object when state or playlists actually change
   const value = useMemo(

@@ -50,6 +50,9 @@ export function NowPlayingBar() {
       {/* Right: volume slider */}
       <div className="now-playing-bar__section now-playing-bar__section--right">
         <VolumeControl />
+        <div className="keyboard-shortcuts-hint" title="Keyboard Shortcuts: Space = Play/Pause, ← = Previous, → = Next">
+          ⌨️
+        </div>
       </div>
     </footer>
   );

@@ -260,3 +260,22 @@
   outline: 2px solid rgba(255, 255, 255, 0.5);
   outline-offset: 2px;
 }
+
+/* ── Keyboard Shortcuts Hint ── */
+.keyboard-shortcuts-hint {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: var(--space-3);
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--font-size-lg);
+  cursor: help;
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+  border-radius: var(--radius-sm);
+}
+
+.keyboard-shortcuts-hint:hover {
+  opacity: 1;
+  background-color: rgba(124, 106, 247, 0.1);
+}
