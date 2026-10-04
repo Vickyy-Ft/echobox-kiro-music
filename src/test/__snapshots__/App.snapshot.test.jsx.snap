@@ -3,6 +3,141 @@
 exports[`App — responsive dark theme snapshot (Req 15.1–15.5) > renders the full layout without throwing and matches snapshot 1`] = `
 <div>
   <div
+    aria-label="Halloween intro"
+    class="halloween-intro halloween-intro--active"
+    role="dialog"
+  >
+    <div
+      class="halloween-particles"
+    >
+      <div
+        class="particle"
+      />
+      <div
+        class="particle"
+      />
+      <div
+        class="particle"
+      />
+      <div
+        class="particle"
+      />
+      <div
+        class="particle"
+      />
+      <div
+        class="particle"
+      />
+      <div
+        class="particle"
+      />
+      <div
+        class="particle"
+      />
+      <div
+        class="particle"
+      />
+      <div
+        class="particle"
+      />
+      <div
+        class="particle"
+      />
+      <div
+        class="particle"
+      />
+      <div
+        class="particle"
+      />
+      <div
+        class="particle"
+      />
+      <div
+        class="particle"
+      />
+    </div>
+    <div
+      class="halloween-intro__content"
+    >
+      <div
+        class="halloween-intro__icon"
+      >
+        🎃
+      </div>
+      <h1
+        class="halloween-intro__title"
+      >
+        <span
+          class="halloween-text"
+        >
+          Happy
+        </span>
+        <span
+          class="halloween-text halloween-text--delay-1"
+        >
+          Halloween
+        </span>
+      </h1>
+      <p
+        class="halloween-intro__subtitle"
+      >
+        <span
+          class="spooky-text"
+        >
+          EchoBox Music
+        </span>
+      </p>
+      <div
+        class="halloween-intro__bats"
+      >
+        <span
+          class="bat"
+        >
+          🦇
+        </span>
+        <span
+          class="bat bat--delay-1"
+        >
+          🦇
+        </span>
+        <span
+          class="bat bat--delay-2"
+        >
+          🦇
+        </span>
+      </div>
+      <p
+        class="halloween-intro__hint"
+      >
+        Click anywhere to enter...
+      </p>
+    </div>
+    <div
+      class="halloween-intro__decorations"
+    >
+      <span
+        class="decoration decoration--top-left"
+      >
+        👻
+      </span>
+      <span
+        class="decoration decoration--top-right"
+      >
+        💀
+      </span>
+      <span
+        class="decoration decoration--bottom-left"
+      >
+        🕷️
+      </span>
+      <span
+        class="decoration decoration--bottom-right"
+      >
+        🕸️
+      </span>
+    </div>
+  </div>
+  <div
     class="app-layout"
   >
     <aside

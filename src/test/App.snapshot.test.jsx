@@ -48,6 +48,12 @@ describe('App — responsive dark theme snapshot (Req 15.1–15.5)', () => {
     // Smoke check: the root app-layout div must exist in the tree
     expect(container.querySelector('.app-layout')).not.toBeNull();
 
+    // Remove dynamic particle styles before snapshotting (they change on each render)
+    const particles = container.querySelectorAll('.halloween-particles .particle');
+    particles.forEach(particle => {
+      particle.removeAttribute('style');
+    });
+
     // Snapshot: captures the dark-theme structural HTML.
     // First run creates the snapshot; subsequent runs detect regressions.
     expect(container).toMatchSnapshot();
