@@ -9,14 +9,51 @@ exports[`App — responsive dark theme snapshot (Req 15.1–15.5) > renders the 
       aria-label="Playlists"
       class="sidebar"
     >
-      <h2
-        class="sidebar__heading"
+      <div
+        class="sidebar__header"
       >
-        Your Playlists
-      </h2>
+        <h2
+          class="sidebar__heading"
+        >
+          Your Playlists
+        </h2>
+        <button
+          aria-label="Switch to light theme"
+          class="theme-toggle"
+          title="Switch to light theme"
+          type="button"
+        >
+          <span
+            class="theme-toggle__icon"
+          >
+            ☀️
+          </span>
+          <span
+            class="theme-toggle__label"
+          >
+            Light
+          </span>
+        </button>
+      </div>
       <section
         class="playlist-list"
       >
+        <div
+          class="playlist-list__import"
+        >
+          <input
+            accept=".json"
+            id="import-playlist"
+            style="display: none;"
+            type="file"
+          />
+          <label
+            class="playlist-list__import-btn"
+            for="import-playlist"
+          >
+            📁 Import Playlist
+          </label>
+        </div>
         <p
           class="playlist-list__empty"
         >
@@ -270,6 +307,12 @@ exports[`App — responsive dark theme snapshot (Req 15.1–15.5) > renders the 
           type="range"
           value="1"
         />
+      </div>
+      <div
+        class="keyboard-shortcuts-hint"
+        title="Keyboard Shortcuts: Space = Play/Pause, ← = Previous, → = Next"
+      >
+        ⌨️
       </div>
     </div>
   </footer>
