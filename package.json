@@ -1,7 +1,8 @@
 {
   "name": "echobox-kiro-music",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "A modern, Spotify-inspired music player built with React and HTML5 Audio API for Kiro University Challenge 2026",
   "type": "module",
   "scripts": {
     "dev": "vite",
