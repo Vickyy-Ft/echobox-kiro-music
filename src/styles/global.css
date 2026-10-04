@@ -26,6 +26,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  
+  /* Monster theme: subtle red glow background */
+  background-image: radial-gradient(circle at 50% 50%, rgba(131, 0, 0, 0.1) 0%, transparent 50%);
 }
 
 /* ── Reset elements ── */
@@ -135,4 +138,42 @@ svg {
     flex: 1 1 0;
     min-height: 0;
   }
+}
+
+/* ── Monster Theme Effects ── */
+
+/* Spooky button glow on hover */
+button:not(:disabled):hover {
+  box-shadow: var(--monster-glow);
+  transition: box-shadow var(--transition-fast);
+}
+
+/* Pulsing effect for accent elements */
+@keyframes monster-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--monster-red-glow);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--monster-red-glow), 0 0 30px var(--monster-red-shadow);
+  }
+}
+
+/* Blood drip effect */
+@keyframes blood-drip {
+  0% {
+    transform: translateY(-2px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(2px);
+    opacity: 1;
+  }
+}
+
+/* Haunted text glow */
+.haunted-glow {
+  text-shadow: 0 0 10px var(--monster-blood),
+               0 0 20px var(--monster-red),
+               0 0 30px var(--monster-maroon);
+  animation: blood-drip 2s ease-in-out infinite alternate;
 }

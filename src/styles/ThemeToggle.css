@@ -19,6 +19,7 @@
   background: var(--color-bg-overlay);
   border-color: var(--color-accent);
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
 }
 
 .theme-toggle:focus-visible {

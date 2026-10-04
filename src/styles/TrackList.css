@@ -17,13 +17,14 @@
   cursor: pointer;
   border-radius: var(--radius-sm);
   color: var(--color-text-secondary);
-  transition: background-color var(--transition-fast), color var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
   user-select: none;
 }
 
 .track-item:hover {
   background-color: var(--color-bg-elevated);
   color: var(--color-text-primary);
+  box-shadow: 0 2px 8px rgba(188, 2, 2, 0.3);
 }
 
 .track-item:focus-visible {
@@ -34,12 +35,14 @@
 
 .track-item--active {
   color: var(--color-accent);
-  background-color: rgba(124, 106, 247, 0.12);
+  background-color: rgba(188, 2, 2, 0.15);
+  box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.3);
 }
 
 .track-item--active:hover {
   color: var(--color-accent-hover);
-  background-color: rgba(124, 106, 247, 0.18);
+  background-color: rgba(188, 2, 2, 0.25);
+  box-shadow: inset 0 0 15px rgba(255, 0, 0, 0.4);
 }
 
 .track-item__title {
@@ -92,7 +95,7 @@
 .search-bar:focus-within {
   border-color: var(--color-border-focus);
   background-color: var(--color-bg-elevated);
-  box-shadow: 0 0 0 3px rgba(124, 106, 247, 0.1);
+  box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.2), 0 0 20px rgba(188, 2, 2, 0.3);
 }
 
 .search-bar__label {
