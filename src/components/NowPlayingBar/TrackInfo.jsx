@@ -15,11 +15,16 @@ export function TrackInfo() {
   const { currentTrack } = state;
 
   return (
-    <div className="track-info">
-      <span className="track-title">
+    <div 
+      className="track-info"
+      role="region"
+      aria-live="polite"
+      aria-label="Now playing track information"
+    >
+      <span className="track-title" aria-label={currentTrack ? `Title: ${currentTrack.title}` : 'No track title'}>
         {currentTrack ? currentTrack.title : 'No track selected'}
       </span>
-      <span className="track-artist">
+      <span className="track-artist" aria-label={currentTrack ? `Artist: ${currentTrack.artist}` : 'No artist'}>
         {currentTrack ? currentTrack.artist : '—'}
       </span>
     </div>

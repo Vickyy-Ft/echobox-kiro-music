@@ -37,11 +37,12 @@ export function SeekBar() {
         value={currentTime}
         onChange={handleChange}
         disabled={noTrack}
-        aria-label="Seek"
+        aria-label="Seek to position in track"
         aria-valuemin={0}
         aria-valuemax={duration}
         aria-valuenow={currentTime}
         aria-valuetext={`${formatDuration(currentTime)} of ${formatDuration(state.duration || 0)}`}
+        title="Drag to seek, or click to jump to position"
       />
       <span className="seek-bar__time seek-bar__time--total" aria-label="Total duration">
         {formatDuration(state.duration || 0)}

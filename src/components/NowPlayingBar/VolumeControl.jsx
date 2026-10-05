@@ -17,7 +17,7 @@ export function VolumeControl() {
   };
 
   return (
-    <div className="volume-control">
+    <div className="volume-control" aria-label="Volume control section">
       <span className="volume-control__icon" aria-hidden="true">🔊</span>
       <input
         type="range"
@@ -27,11 +27,12 @@ export function VolumeControl() {
         step={0.01}
         value={state.volume}
         onChange={handleChange}
-        aria-label="Volume"
+        aria-label="Volume level"
         aria-valuemin={0}
         aria-valuemax={1}
         aria-valuenow={state.volume}
         aria-valuetext={`Volume ${Math.round(state.volume * 100)}%`}
+        title="Adjust volume (0% to 100%)"
       />
     </div>
   );

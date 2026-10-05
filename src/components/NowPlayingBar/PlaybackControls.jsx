@@ -33,7 +33,8 @@ export function PlaybackControls() {
           className="playback-controls__btn playback-controls__btn--prev"
           onClick={() => audioEngine.skipPrevious()}
           disabled={noTrack}
-          aria-label="Previous track"
+          aria-label="Previous track (shortcut: Left arrow)"
+          title="Previous track (Left arrow)"
         >
           ⏮
         </button>
@@ -43,7 +44,8 @@ export function PlaybackControls() {
             className="playback-controls__btn playback-controls__btn--pause"
             onClick={() => audioEngine.pause()}
             disabled={playPauseDisabled}
-            aria-label="Pause"
+            aria-label="Pause playback (shortcut: Spacebar)"
+            title="Pause (Spacebar)"
           >
             ⏸
           </button>
@@ -52,7 +54,8 @@ export function PlaybackControls() {
             className="playback-controls__btn playback-controls__btn--play"
             onClick={() => audioEngine.play()}
             disabled={playPauseDisabled}
-            aria-label="Play"
+            aria-label="Play (shortcut: Spacebar)"
+            title="Play (Spacebar)"
           >
             ▶
           </button>
@@ -62,7 +65,8 @@ export function PlaybackControls() {
           className="playback-controls__btn playback-controls__btn--next"
           onClick={() => audioEngine.skipNext()}
           disabled={noTrack}
-          aria-label="Next track"
+          aria-label="Next track (shortcut: Right arrow)"
+          title="Next track (Right arrow)"
         >
           ⏭
         </button>
