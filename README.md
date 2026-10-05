@@ -257,6 +257,36 @@ To add your own music to EchoBox:
    npm run preview
    ```
 
+## ⌨️ Keyboard Shortcuts
+
+EchoBox is fully keyboard accessible. Use these shortcuts to control playback without touching your mouse:
+
+| Shortcut | Action | Use Case |
+|----------|--------|----------|
+| **Spacebar** | Play / Pause | Quick toggle for playback |
+| **→ Right Arrow** | Next Track | Skip to the next song in queue |
+| **← Left Arrow** | Previous Track | Jump to previous song; press again within 3 seconds to restart current track |
+| **Tab** | Navigate Focus | Move focus through all interactive elements (buttons, inputs, playlists) |
+| **Shift + Tab** | Focus Backward | Navigate backward through interactive elements |
+| **Enter** | Activate / Select | Confirm dialogs, select tracks, create playlists |
+| **Escape** | Close / Dismiss | Close the Halloween intro splash screen |
+| **0–1 (numeric)** | Set Volume | *Future feature* — 0 = mute, 1 = max (when implemented) |
+
+### Focus Navigation
+
+- **Play/Pause Button**: Press **Tab** to reach the play button, then **Spacebar** to toggle
+- **Seek Bar**: **Tab** to focus, then **← →** arrows to seek backward/forward
+- **Volume Slider**: **Tab** to focus, then **← →** arrows to adjust volume
+- **Playlist Items**: **Tab** to navigate through playlists, **Enter** to play
+- **Track Items**: **Tab** to move through tracks, **Enter** to select
+
+### Tips for Keyboard Users
+
+- **Visible Focus Indicators**: All interactive elements show a bright outline when focused via keyboard
+- **No Mouse Required**: Full application control is possible with keyboard only
+- **Screen Reader Friendly**: All controls have descriptive ARIA labels for assistive technology
+- **Play Button Disabled?**: If the play button appears dimmed, no track is selected. Select a track first
+
 ## 🔐 Privacy & Data
 
 EchoBox Music is **100% client-side** and requires **no backend**:
