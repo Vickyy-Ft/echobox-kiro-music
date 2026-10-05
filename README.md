@@ -490,9 +490,9 @@ Complete keyboard control without mouse:
 ### First Time Setup
 
 1. **Prerequisites**
-   - Node.js 16+ (recommended: 18 or 20 LTS)
-   - npm 7+ or yarn 1.22+
-   - Git for version control
+   - Node.js version 16 or higher (Node.js 18 or 20 LTS recommended for best performance)
+   - npm version 7 or higher, or yarn version 1.22 or higher
+   - Git version control system for cloning the repository
 
 2. **Clone & Install**
    ```bash
@@ -504,7 +504,7 @@ Complete keyboard control without mouse:
 3. **Start Development**
    ```bash
    npm run dev
-   # Opens http://localhost:5173
+   # Development server starts at http://localhost:5173
    ```
 
 ### Development Workflow
