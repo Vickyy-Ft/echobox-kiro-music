@@ -466,14 +466,14 @@ Complete keyboard control without mouse:
 
 ### Playlists Not Saving
 
-**Problem:** Playlists disappear after refresh
+**Problem:** Your playlists disappear or don't persist after you refresh the page
 
-**Solutions:**
-1. Check browser localStorage is enabled
-   - Settings → Privacy → "Allow local data storage"
-2. Verify not in private/incognito mode (data is cleared on close)
-3. Check browser storage limits (usually 5-10MB)
-4. Try exporting playlist as backup before clearing cache
+**Solutions to try:**
+1. Verify that browser localStorage is enabled in your browser settings
+   - Access Settings → Privacy & Security → "Allow local data storage"
+2. Confirm you're not using a private or incognito browser window (session data is cleared on close)
+3. Check your browser's storage quota hasn't been exceeded (typically 5-10MB per site)
+4. Try exporting your playlists as a backup before clearing your browser cache
 
 ### Keyboard Shortcuts Not Working
 
