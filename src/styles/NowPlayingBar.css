@@ -113,8 +113,9 @@
 }
 
 .playback-controls__btn:focus-visible {
-  outline: 2px solid var(--color-border-focus);
-  outline-offset: 2px;
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
 }
 
 .playback-controls__btn:disabled {
@@ -286,8 +287,21 @@
 }
 
 .now-playing-bar__error-dismiss:focus-visible {
-  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline: 3px solid rgba(255, 255, 255, 0.7);
   outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Enhanced focus visible for seek bar */
+.seek-bar {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+.seek-bar input[type="range"]:focus-visible {
+  outline: 2px dashed var(--color-accent);
+  outline-offset: 6px;
 }
 
 /* ── Keyboard Shortcuts Hint ── */

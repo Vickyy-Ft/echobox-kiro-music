@@ -89,6 +89,36 @@ svg {
   border-radius: var(--radius-sm);
 }
 
+/* Enhanced focus-visible for buttons */
+button:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Enhanced focus-visible for inputs */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  background-color: var(--color-bg-overlay);
+  border-radius: var(--radius-sm);
+}
+
+/* Focus visible for range inputs (volume slider, seek bar) */
+input[type="range"]:focus-visible {
+  outline: 2px dashed var(--color-accent);
+  outline-offset: 4px;
+}
+
+/* Focus visible for interactive divs with role="button" */
+[role="button"]:focus-visible,
+[role="tab"]:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
 /* ── App layout ── */
 #root {
   height: 100vh;
