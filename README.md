@@ -296,6 +296,64 @@ EchoBox Music is **100% client-side** and requires **no backend**:
 - ✅ All data stored locally in your browser
 - ✅ Works offline after initial load
 
+## 📤 Playlist Import / Export
+
+EchoBox lets you save, share, and import playlists as JSON files. This is perfect for backing up your collections or sharing music recommendations with friends.
+
+### Exporting a Playlist
+
+1. **Open EchoBox** in your browser
+2. **Expand a playlist** in the Sidebar by clicking on it
+3. **Click the download icon** (↓) next to the playlist name
+4. A **JSON file** is downloaded to your default Downloads folder
+   - File name format: `playlist-name_playlist.json`
+   - Safe to rename or organize into folders
+
+**Example exported file:**
+```json
+{
+  "id": "unique-playlist-id",
+  "name": "My Favorites",
+  "tracks": [
+    {
+      "id": "track-1",
+      "title": "Song Title",
+      "artist": "Artist Name",
+      "album": "Album Name",
+      "duration": 180,
+      "src": "/audio/song.mp3"
+    }
+  ]
+}
+```
+
+### Importing a Playlist
+
+1. **Open EchoBox** in your browser
+2. **Click the "📁 Import Playlist"** button in the Sidebar
+3. **Select a `.json` file** from your computer
+4. The playlist is **instantly added** to your collection
+5. A success message appears; any errors will be shown
+
+**Tips for importing:**
+- Only valid `.json` files are accepted
+- Imported playlists keep their original name and track order
+- If a playlist with the same name exists, it's imported as a separate copy
+- Track audio files must still be available (same `src` paths)
+- If a track's audio file is missing, the import still succeeds but playback will fail for that track
+
+### Sharing Playlists
+
+1. **Export your playlist** as JSON (see Export section above)
+2. **Share the file** via email, chat, cloud storage, or any file-sharing method
+3. Your friend can **import the playlist** into their own EchoBox instance
+
+### Backup Your Playlists
+
+1. **Regularly export** all your playlists
+2. **Store the files** in a cloud folder (Google Drive, Dropbox, OneDrive)
+3. **If you clear browser data**, re-import your playlists to restore them instantly
+
 ## 🤝 Contributing
 
 Contributions are welcome! To contribute:
