@@ -345,11 +345,11 @@ EchoBox lets you save, share, and import playlists as JSON files. This is perfec
 
 ### Importing a Playlist
 
-1. **Open EchoBox** in your browser
-2. **Click the "📁 Import Playlist"** button in the Sidebar
-3. **Select a `.json` file** from your computer
-4. The playlist is **instantly added** to your collection
-5. A success message appears; any errors will be shown
+1. **Open EchoBox** in your web browser
+2. **Locate and click the "📁 Import Playlist"** button in the Sidebar
+3. **Select a `.json` file** from your computer's file system
+4. The playlist is **instantly added** to your collection with all tracks preserved
+5. A success confirmation message will appear; any errors display helpful error messages
 
 **Tips for importing:**
 - Only valid `.json` files are accepted
