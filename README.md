@@ -527,31 +527,31 @@ Before committing:
 
 ## 🎓 Kiro Lessons & Patterns
 
-### State Management
+### State Management Architecture
 
-- **Single Reducer** — One action per mutation, centralized logic
-- **Never Store Audio State** — Audio element is a ref only
-- **Dispatch on Events** — Read state from React, not DOM
+- **Single Centralized Reducer** — Each mutation is an explicit action, enabling clear traceability and centralized business logic
+- **Never Store Audio State in React** — Keep the audio element as a ref only; derive playback state from React Context instead
+- **Dispatch Actions on Events** — Respond to audio events by dispatching reducer actions rather than reading from the DOM directly
 
-### Custom Hooks as Boundaries
+### Custom Hooks as Clear Boundaries
 
-- `useAudioEngine` — Audio lifecycle
-- `usePlaylistManager` — Playlist persistence
-- Easy to test, reuse, and refactor
+- `useAudioEngine` — Encapsulates complete audio lifecycle and playback control
+- `usePlaylistManager` — Handles all playlist persistence and localStorage synchronization
+- Well-defined boundaries make hooks easier to test, reuse across components, and refactor confidently
 
-### Persistence Patterns
+### Data Persistence Patterns
 
-- **Write-Then-Set** — Persist before updating state
-- **Defensive Parsing** — Validate storage data, default gracefully
-- **Silent Failures** — Better than crashes
+- **Write-Then-Set Pattern** — Always persist changes to localStorage before updating in-memory state for safety and reliability
+- **Defensive Parsing on Load** — Validate all persisted data strictly and default gracefully to avoid silent state corruption
+- **Silent Failures for Robustness** — Catch storage errors without blocking; better to lose a preference than crash the app
 
-### Testing Discoveries
+### Key Testing Discoveries
 
-Property-based tests found bugs unit tests missed:
-- Volume clamping with NaN, Infinity
-- Queue navigation at boundaries
-- Serialization round-trips
-- Edge cases with corrupted data
+Property-based tests uncovered edge cases that traditional unit tests overlooked:
+- Volume clamping with invalid values (NaN, Infinity, negative numbers)
+- Queue navigation behavior at array boundaries
+- Data serialization round-trip integrity and type preservation
+- Robustness with corrupted or partially invalid data
 
 ## 🎯 Kiro Integration & Artifacts
 
