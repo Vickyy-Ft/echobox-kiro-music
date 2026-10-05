@@ -164,7 +164,12 @@ export function PlaylistList() {
       </div>
 
       {playlists.length === 0 ? (
-        <p className="playlist-list__empty">No playlists yet. Create one below!</p>
+        <div className="playlist-list__empty">
+          <p>No playlists yet</p>
+          <p style={{ fontSize: 'var(--font-size-xs)', marginTop: 'var(--space-2)', opacity: 0.7 }}>
+            Create your first collection below to get started
+          </p>
+        </div>
       ) : (
         // M5 fix: div wrapper is valid; avoids div-inside-ul HTML violation
         <div className="playlist-list__items">

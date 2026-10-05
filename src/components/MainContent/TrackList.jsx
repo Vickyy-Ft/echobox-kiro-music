@@ -20,9 +20,14 @@ export function TrackList({ tracks, onTrackSelect, emptyMessage }) {
   return (
     <div className="track-list-container">
       {tracks.length === 0 ? (
-        <p className="track-list__empty">
-          {emptyMessage || 'No tracks available'}
-        </p>
+        <div className="track-list__empty">
+          <p>{emptyMessage || 'No tracks available'}</p>
+          {!emptyMessage && (
+            <p style={{ fontSize: 'var(--font-size-xs)', marginTop: 'var(--space-2)', opacity: 0.7 }}>
+              Check the catalog or create a playlist to get started
+            </p>
+          )}
+        </div>
       ) : (
         <ul className="track-list">
           {tracks.map((track) => (
