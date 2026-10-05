@@ -3,11 +3,15 @@
 exports[`App — responsive dark theme snapshot (Req 15.1–15.5) > renders the full layout without throwing and matches snapshot 1`] = `
 <div>
   <div
-    aria-label="Halloween intro"
+    aria-describedby="halloween-intro-hint"
+    aria-label="Halloween intro splash screen"
+    aria-modal="true"
     class="halloween-intro halloween-intro--active"
     role="dialog"
+    tabindex="0"
   >
     <div
+      aria-hidden="true"
       class="halloween-particles"
     >
       <div
@@ -106,13 +110,21 @@ exports[`App — responsive dark theme snapshot (Req 15.1–15.5) > renders the 
           🦇
         </span>
       </div>
+      <button
+        aria-label="Enter EchoBox Music Studio"
+        class="halloween-intro__button"
+      >
+        Enter EchoBox Studio
+      </button>
       <p
         class="halloween-intro__hint"
+        id="halloween-intro-hint"
       >
-        Click anywhere to enter...
+        Or press Enter / Escape to continue
       </p>
     </div>
     <div
+      aria-hidden="true"
       class="halloween-intro__decorations"
     >
       <span
@@ -189,11 +201,18 @@ exports[`App — responsive dark theme snapshot (Req 15.1–15.5) > renders the 
             📁 Import Playlist
           </label>
         </div>
-        <p
+        <div
           class="playlist-list__empty"
         >
-          No playlists yet. Create one below!
-        </p>
+          <p>
+            No playlists yet
+          </p>
+          <p
+            style="font-size: var(--font-size-xs); margin-top: var(--space-2); opacity: 0.7;"
+          >
+            Create your first collection below to get started
+          </p>
+        </div>
       </section>
       <form
         class="create-playlist-form"
@@ -340,14 +359,19 @@ exports[`App — responsive dark theme snapshot (Req 15.1–15.5) > renders the 
       class="now-playing-bar__section now-playing-bar__section--left"
     >
       <div
+        aria-label="Now playing track information"
+        aria-live="polite"
         class="track-info"
+        role="region"
       >
         <span
+          aria-label="No track title"
           class="track-title"
         >
           No track selected
         </span>
         <span
+          aria-label="No artist"
           class="track-artist"
         >
           —
@@ -364,23 +388,26 @@ exports[`App — responsive dark theme snapshot (Req 15.1–15.5) > renders the 
           class="playback-controls__buttons"
         >
           <button
-            aria-label="Previous track"
+            aria-label="Previous track (shortcut: Left arrow)"
             class="playback-controls__btn playback-controls__btn--prev"
             disabled=""
+            title="Previous track (Left arrow)"
           >
             ⏮
           </button>
           <button
-            aria-label="Play"
+            aria-label="Play (shortcut: Spacebar)"
             class="playback-controls__btn playback-controls__btn--play"
             disabled=""
+            title="Play (Spacebar)"
           >
             ▶
           </button>
           <button
-            aria-label="Next track"
+            aria-label="Next track (shortcut: Right arrow)"
             class="playback-controls__btn playback-controls__btn--next"
             disabled=""
+            title="Next track (Right arrow)"
           >
             ⏭
           </button>
@@ -395,7 +422,7 @@ exports[`App — responsive dark theme snapshot (Req 15.1–15.5) > renders the 
             0:00
           </span>
           <input
-            aria-label="Seek"
+            aria-label="Seek to position in track"
             aria-valuemax="100"
             aria-valuemin="0"
             aria-valuenow="0"
@@ -405,6 +432,7 @@ exports[`App — responsive dark theme snapshot (Req 15.1–15.5) > renders the 
             max="100"
             min="0"
             step="0.1"
+            title="Drag to seek, or click to jump to position"
             type="range"
             value="0"
           />
@@ -421,6 +449,7 @@ exports[`App — responsive dark theme snapshot (Req 15.1–15.5) > renders the 
       class="now-playing-bar__section now-playing-bar__section--right"
     >
       <div
+        aria-label="Volume control section"
         class="volume-control"
       >
         <span
@@ -430,7 +459,7 @@ exports[`App — responsive dark theme snapshot (Req 15.1–15.5) > renders the 
           🔊
         </span>
         <input
-          aria-label="Volume"
+          aria-label="Volume level"
           aria-valuemax="1"
           aria-valuemin="0"
           aria-valuenow="1"
@@ -439,6 +468,7 @@ exports[`App — responsive dark theme snapshot (Req 15.1–15.5) > renders the 
           max="1"
           min="0"
           step="0.01"
+          title="Adjust volume (0% to 100%)"
           type="range"
           value="1"
         />

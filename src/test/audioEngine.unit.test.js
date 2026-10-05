@@ -178,7 +178,7 @@ describe('useAudioEngine — audio error event (Req 8.1)', () => {
     const setErrorCall = mockDispatch.mock.calls.find(
       ([action]) => action.type === 'SET_ERROR'
     );
-    expect(setErrorCall[0].error).toBe('A network error interrupted loading.');
+    expect(setErrorCall[0].error).toBe('Network error: unable to load audio. Check your connection and try again.');
   });
 
   it('dispatches SET_ERROR with "aborted" message for MEDIA_ERR_ABORTED', () => {
@@ -193,7 +193,7 @@ describe('useAudioEngine — audio error event (Req 8.1)', () => {
     const setErrorCall = mockDispatch.mock.calls.find(
       ([action]) => action.type === 'SET_ERROR'
     );
-    expect(setErrorCall[0].error).toBe('Playback was aborted.');
+    expect(setErrorCall[0].error).toBe('Playback was interrupted. Try pressing play again.');
   });
 
   it('dispatches SET_ERROR with "not supported" message for MEDIA_ERR_SRC_NOT_SUPPORTED', () => {
@@ -208,7 +208,7 @@ describe('useAudioEngine — audio error event (Req 8.1)', () => {
     const setErrorCall = mockDispatch.mock.calls.find(
       ([action]) => action.type === 'SET_ERROR'
     );
-    expect(setErrorCall[0].error).toBe('The audio format is not supported.');
+    expect(setErrorCall[0].error).toBe('Audio format not supported by your browser. Try another track.');
   });
 
   it('dispatches SET_ERROR with fallback message when mediaError is null', () => {
@@ -223,7 +223,7 @@ describe('useAudioEngine — audio error event (Req 8.1)', () => {
     const setErrorCall = mockDispatch.mock.calls.find(
       ([action]) => action.type === 'SET_ERROR'
     );
-    expect(setErrorCall[0].error).toBe('An unknown audio error occurred.');
+    expect(setErrorCall[0].error).toBe('Audio playback failed. Try reloading the page or selecting a different track.');
   });
 });
 
@@ -245,7 +245,7 @@ describe('useAudioEngine — decode error (Req 8.2)', () => {
       ([action]) => action.type === 'SET_ERROR'
     );
     expect(setErrorCall).toBeDefined();
-    expect(setErrorCall[0].error).toBe('The audio file could not be decoded.');
+    expect(setErrorCall[0].error).toBe('Audio file is corrupted or unreadable. Try a different track.');
   });
 
   it('auto-advances queue when a decode error occurs mid-queue (skipNext-style dispatch)', () => {
@@ -353,35 +353,35 @@ describe('playerReducer — error dismissed (Req 8.3)', () => {
 // ---------------------------------------------------------------------------
 
 describe('buildErrorMessage', () => {
-  it('returns "Playback was aborted." for MEDIA_ERR_ABORTED', () => {
+  it('returns "Playback was interrupted." for MEDIA_ERR_ABORTED', () => {
     expect(buildErrorMessage({ code: MediaError.MEDIA_ERR_ABORTED })).toBe(
-      'Playback was aborted.'
+      'Playback was interrupted. Try pressing play again.'
     );
   });
 
   it('returns network error message for MEDIA_ERR_NETWORK', () => {
     expect(buildErrorMessage({ code: MediaError.MEDIA_ERR_NETWORK })).toBe(
-      'A network error interrupted loading.'
+      'Network error: unable to load audio. Check your connection and try again.'
     );
   });
 
   it('returns decode error message for MEDIA_ERR_DECODE', () => {
     expect(buildErrorMessage({ code: MediaError.MEDIA_ERR_DECODE })).toBe(
-      'The audio file could not be decoded.'
+      'Audio file is corrupted or unreadable. Try a different track.'
     );
   });
 
   it('returns not-supported message for MEDIA_ERR_SRC_NOT_SUPPORTED', () => {
     expect(buildErrorMessage({ code: MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED })).toBe(
-      'The audio format is not supported.'
+      'Audio format not supported by your browser. Try another track.'
     );
   });
 
   it('returns fallback message for an unknown error code', () => {
-    expect(buildErrorMessage({ code: 999 })).toBe('An unknown audio error occurred.');
+    expect(buildErrorMessage({ code: 999 })).toBe('Audio playback failed. Try reloading the page or selecting a different track.');
   });
 
   it('returns fallback message when mediaError is null', () => {
-    expect(buildErrorMessage(null)).toBe('An unknown audio error occurred.');
+    expect(buildErrorMessage(null)).toBe('Audio playback failed. Try reloading the page or selecting a different track.');
   });
 });
