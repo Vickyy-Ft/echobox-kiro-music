@@ -275,7 +275,7 @@ To add your own music to EchoBox:
 
 ## ⌨️ Keyboard Shortcuts
 
-EchoBox is fully keyboard accessible. Use these shortcuts to control playback without touching your mouse:
+EchoBox Music provides complete keyboard control for power users and accessibility needs. Control playback entirely without your mouse using these essential shortcuts:
 
 | Shortcut | Action | Use Case |
 |----------|--------|----------|
