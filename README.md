@@ -298,10 +298,10 @@ EchoBox Music provides complete keyboard control for power users and accessibili
 
 ### Tips for Keyboard Users
 
-- **Visible Focus Indicators**: All interactive elements show a bright outline when focused via keyboard
-- **No Mouse Required**: Full application control is possible with keyboard only
-- **Screen Reader Friendly**: All controls have descriptive ARIA labels for assistive technology
-- **Play Button Disabled?**: If the play button appears dimmed, no track is selected. Select a track first
+- **Visible Focus Indicators**: Every interactive element displays a clear, bright outline when focused using keyboard navigation for easy visibility
+- **No Mouse Required**: The entire application is fully operable using keyboard controls only
+- **Screen Reader Friendly**: All controls include comprehensive ARIA labels for screen reader compatibility
+- **Play Button Disabled?**: If the play button appears dimmed or disabled, select a track first to enable playback
 
 ## 🔐 Privacy & Data
 
