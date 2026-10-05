@@ -223,10 +223,26 @@ Components re-render
 
 ## 🎯 Browser Support
 
-- Chrome/Edge 90+
-- Firefox 88+
-- Safari 14+
-- Opera 76+
+EchoBox Music works on all modern browsers that support HTML5 Audio:
+
+| Browser | Support | Notes |
+|---------|---------|-------|
+| **Chrome/Edge** | 90+ | Full support including keyboard shortcuts |
+| **Firefox** | 88+ | Full support, excellent audio quality |
+| **Safari** | 14+ | Full support on macOS and iOS |
+| **Opera** | 76+ | Chromium-based, full support |
+| **Mobile Browsers** | Modern | Responsive design optimized for touch |
+
+**Requirements:**
+- JavaScript enabled (obviously)
+- localStorage available for playlist persistence
+- HTML5 Audio API support
+- Modern ES2020+ JavaScript features
+
+**Known Limitations:**
+- Autoplay may be blocked by browser policy (user must click play first)
+- Volume control may be disabled on some mobile devices
+- Seek functionality depends on audio CORS headers
 
 ## 📝 Adding Audio Tracks
 
@@ -382,6 +398,160 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - Architecture guided by the **EchoBox React Audio Power**
 - Inspired by modern music streaming interfaces
 - Special thanks to the React and Vite communities
+
+## ♿ Accessibility & Inclusive Design
+
+EchoBox Music is designed to be fully accessible to all users, including those using assistive technologies.
+
+### WCAG AA Compliance
+
+The application aims for **WCAG 2.1 Level AA** compliance:
+- ✅ Keyboard navigation fully supported (Tab, Spacebar, Arrow keys)
+- ✅ Focus indicators clearly visible on all interactive elements
+- ✅ Semantic HTML and ARIA labels throughout
+- ✅ Color contrast ratios meet WCAG AA standards (4.5:1 minimum)
+- ✅ All controls have descriptive labels
+- ✅ Error messages are clear and actionable
+
+### Screen Reader Support
+
+- All interactive elements have descriptive `aria-label` attributes
+- Form inputs use associated `<label>` elements
+- Regions marked with `role` attributes for logical navigation
+- Live regions (`aria-live="polite"`) announce state changes
+- Lists and navigation structures use semantic HTML
+
+### Keyboard Navigation
+
+Complete keyboard control without mouse:
+- **Tab** — Navigate through interactive elements
+- **Shift+Tab** — Reverse navigation
+- **Spacebar** — Play/Pause
+- **Arrow Keys** — Next/Previous track, volume/seek adjustment
+- **Enter** — Activate buttons and dialogs
+- **Escape** — Close dialogs
+
+### Color & Contrast
+
+- Dark theme with high contrast text (WCAG AA compliant)
+- No information conveyed by color alone
+- Focus indicators use color + outline
+- Status indicated with text labels, not just color changes
+
+### Motor Accessibility
+
+- Large touch targets on mobile (minimum 44×44 pixels)
+- Keyboard-only operation fully supported
+- No gestures required
+- Sufficient spacing between interactive elements
+- Debounced controls prevent accidental triggers
+
+## 🆘 Troubleshooting
+
+### Audio Won't Play
+
+**Problem:** Click play but hear nothing
+
+**Solutions:**
+1. Check browser console for errors (F12 → Console tab)
+2. Verify audio file exists in `public/audio/` directory
+3. Check that `src` path in catalog matches actual file location
+4. Try a different audio file to isolate the issue
+5. Check browser volume is not muted
+
+**Common Errors:**
+- `NetworkError` → Audio file not found or CORS issue
+- `NotSupportedError` → Audio format not supported by browser
+- `NotAllowedError` → Autoplay blocked; click play button to start
+
+### Playlists Not Saving
+
+**Problem:** Playlists disappear after refresh
+
+**Solutions:**
+1. Check browser localStorage is enabled
+   - Settings → Privacy → "Allow local data storage"
+2. Verify not in private/incognito mode (data is cleared on close)
+3. Check browser storage limits (usually 5-10MB)
+4. Try exporting playlist as backup before clearing cache
+
+### Keyboard Shortcuts Not Working
+
+**Problem:** Keyboard shortcuts don't respond
+
+**Solutions:**
+1. Ensure EchoBox window has focus (click anywhere in app)
+2. Verify number lock is on for numeric keys
+3. Check if browser extension intercepts keyboard (disable temporarily)
+4. Try different browser to isolate OS-level issue
+
+## 📚 Setup Instructions
+
+### First Time Setup
+
+1. **Prerequisites**
+   - Node.js 16+ (recommended: 18 or 20 LTS)
+   - npm 7+ or yarn 1.22+
+   - Git for version control
+
+2. **Clone & Install**
+   ```bash
+   git clone https://github.com/Vickyy-Ft/echobox-kiro-music.git
+   cd echobox-kiro-music
+   npm install
+   ```
+
+3. **Start Development**
+   ```bash
+   npm run dev
+   # Opens http://localhost:5173
+   ```
+
+### Development Workflow
+
+Before committing:
+1. ✅ `npm test` — all tests pass
+2. ✅ `npm run build` — production build succeeds
+3. ✅ Manual testing in browser
+4. ✅ No console errors or warnings
+
+## 📊 Project Structure
+
+**`src/components/`** — UI components organized by feature
+**`src/context/`** — React Context + Reducer state management
+**`src/hooks/`** — Custom hooks (audio engine, playlist manager)
+**`src/utils/`** — Pure utility functions (formatting, filtering, etc.)
+**`src/styles/`** — CSS with design system variables
+**`src/test/`** — Unit, integration, and property-based tests
+**`.kiro/`** — Kiro IDE configuration (specs, steering, hooks)
+
+## 🎓 Kiro Lessons & Patterns
+
+### State Management
+
+- **Single Reducer** — One action per mutation, centralized logic
+- **Never Store Audio State** — Audio element is a ref only
+- **Dispatch on Events** — Read state from React, not DOM
+
+### Custom Hooks as Boundaries
+
+- `useAudioEngine` — Audio lifecycle
+- `usePlaylistManager` — Playlist persistence
+- Easy to test, reuse, and refactor
+
+### Persistence Patterns
+
+- **Write-Then-Set** — Persist before updating state
+- **Defensive Parsing** — Validate storage data, default gracefully
+- **Silent Failures** — Better than crashes
+
+### Testing Discoveries
+
+Property-based tests found bugs unit tests missed:
+- Volume clamping with NaN, Infinity
+- Queue navigation at boundaries
+- Serialization round-trips
+- Edge cases with corrupted data
 
 ## 🎯 Kiro Integration & Artifacts
 
