@@ -383,6 +383,61 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - Inspired by modern music streaming interfaces
 - Special thanks to the React and Vite communities
 
+## 🎯 Kiro Integration & Artifacts
+
+EchoBox Music was built with [**Kiro**](https://kiro.dev), an AI-powered development environment. This section documents how Kiro is used in the project.
+
+### Kiro Powers Used
+
+- **[echobox-react-audio-power](https://kiro.dev/powers)** — Provides guidance on building React music players with HTML5 Audio API, shared playback state, playlists, and playback controls. This power informed the audio engine architecture and player controls design.
+
+### Project Configuration in `.kiro/`
+
+All Kiro project files are stored in `.kiro/`:
+
+```
+.kiro/
+├── specs/                 # Project requirements and design specifications
+│   └── *.md              # Feature specs with acceptance criteria
+├── steering/             # Development workflow guidelines
+│   ├── 01-architecture.md    # State management and component patterns
+│   ├── 02-testing.md         # Testing strategy with 20+ properties
+│   ├── 03-styling.md         # CSS conventions and design system
+│   └── 04-build-and-deploy.md # Build workflow and scripts
+├── hooks/                # Automation and validation hooks
+│   └── *.json           # Pre-commit, build, and code review
+└── agents/              # Custom Kiro agents
+    └── *.md             # Specialized execution patterns
+```
+
+### Steering Files — Development Standards
+
+EchoBox uses Kiro steering files to enforce consistency:
+
+1. **`01-architecture.md`** — React + Context + Reducer pattern, centralized state, hook lifecycle
+2. **`02-testing.md`** — Vitest + @testing-library/react + fast-check with 20 property-based correctness tests
+3. **`03-styling.md`** — CSS custom properties, responsive design, WCAG AA accessibility
+4. **`04-build-and-deploy.md`** — npm scripts, development workflow, production validation
+
+### Automation Hooks
+
+Kiro hooks automate development tasks:
+
+- **Pre-commit validation** — Runs tests and linting before commits
+- **Build verification** — Ensures production builds succeed
+- **Code review agents** — Performs behavioral and semantic analysis
+
+### Working with Kiro
+
+To work on EchoBox in Kiro:
+
+1. Open in **Kiro IDE** (VS Code with Kiro extension)
+2. Read `.kiro/steering/` files to understand standards
+3. Review `.kiro/specs/` for detailed requirements
+4. Use Kiro agents for code review, testing, and refactoring
+
+Learn more at [kiro.dev](https://kiro.dev)
+
 ## 📬 Contact
 
 **Vignesh K**
