@@ -450,14 +450,14 @@ Complete keyboard control without mouse:
 
 ### Audio Won't Play
 
-**Problem:** Click play but hear nothing
+**Problem:** You press the play button but hear no audio output
 
-**Solutions:**
-1. Check browser console for errors (F12 → Console tab)
-2. Verify audio file exists in `public/audio/` directory
-3. Check that `src` path in catalog matches actual file location
-4. Try a different audio file to isolate the issue
-5. Check browser volume is not muted
+**Solutions to try:**
+1. Open your browser's developer console (F12 → Console tab) to check for error messages
+2. Verify that audio files exist in the `public/audio/` directory on your system
+3. Confirm that the `src` path in the catalog file matches the actual audio file location exactly
+4. Test playback with a different audio file to determine if the issue is file-specific
+5. Verify your browser's audio volume and system volume are not muted
 
 **Common Errors:**
 - `NetworkError` → Audio file not found or CORS issue
