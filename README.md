@@ -318,12 +318,12 @@ EchoBox lets you save, share, and import playlists as JSON files. This is perfec
 
 ### Exporting a Playlist
 
-1. **Open EchoBox** in your browser
-2. **Expand a playlist** in the Sidebar by clicking on it
-3. **Click the download icon** (↓) next to the playlist name
-4. A **JSON file** is downloaded to your default Downloads folder
-   - File name format: `playlist-name_playlist.json`
-   - Safe to rename or organize into folders
+1. **Open EchoBox** in your web browser
+2. **Locate and expand a playlist** in the Sidebar by clicking on its name
+3. **Click the download arrow icon** (↓) positioned next to the playlist name
+4. Your browser **automatically downloads a JSON file** to your default Downloads folder
+   - The filename follows the format: `playlist-name_playlist.json`
+   - Safe to rename, move, or organize the file in folders as needed
 
 **Example exported file:**
 ```json
