@@ -227,11 +227,11 @@ EchoBox Music works on all modern browsers that support HTML5 Audio:
 
 | Browser | Support | Notes |
 |---------|---------|-------|
-| **Chrome/Edge** | 90+ | Full support including keyboard shortcuts |
-| **Firefox** | 88+ | Full support, excellent audio quality |
-| **Safari** | 14+ | Full support on macOS and iOS |
-| **Opera** | 76+ | Chromium-based, full support |
-| **Mobile Browsers** | Modern | Responsive design optimized for touch |
+| **Chrome/Edge** | 90+ | Complete feature support including keyboard shortcuts and all accessibility features |
+| **Firefox** | 88+ | Full support with excellent audio quality and performance |
+| **Safari** | 14+ | Complete support on macOS and iOS devices with all features |
+| **Opera** | 76+ | Chromium-based browser with full feature support |
+| **Mobile Browsers** | Modern | Responsive design fully optimized for touch-based mobile interaction |
 
 **Requirements:**
 - JavaScript enabled (obviously)
