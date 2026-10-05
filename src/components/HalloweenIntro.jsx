@@ -31,14 +31,24 @@ export function HalloweenIntro({ onComplete }) {
     }, 600); // Wait for fade-out animation
   };
 
+  // Handle keyboard events: Enter or Escape to dismiss
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === 'Escape') {
+      e.preventDefault();
+      handleDismiss();
+    }
+  };
+
   if (!isVisible) return null;
 
   return (
     <div 
       className={`halloween-intro ${isAnimating ? 'halloween-intro--active' : 'halloween-intro--exit'}`}
       onClick={handleDismiss}
+      onKeyDown={handleKeyDown}
       role="dialog"
       aria-label="Halloween intro"
+      tabIndex={0}
     >
       {/* Floating particles */}
       <div className="halloween-particles">
