@@ -47,11 +47,13 @@ export function HalloweenIntro({ onComplete }) {
       onClick={handleDismiss}
       onKeyDown={handleKeyDown}
       role="dialog"
-      aria-label="Halloween intro"
+      aria-modal="true"
+      aria-label="Halloween intro splash screen"
+      aria-describedby="halloween-intro-hint"
       tabIndex={0}
     >
       {/* Floating particles */}
-      <div className="halloween-particles">
+      <div className="halloween-particles" aria-hidden="true">
         {[...Array(15)].map((_, i) => (
           <div 
             key={i} 
@@ -86,13 +88,13 @@ export function HalloweenIntro({ onComplete }) {
           <span className="bat bat--delay-2">🦇</span>
         </div>
 
-        <p className="halloween-intro__hint">
-          Click anywhere to enter...
+        <p className="halloween-intro__hint" id="halloween-intro-hint">
+          Click anywhere, press Enter, or Escape to enter...
         </p>
       </div>
 
       {/* Decorative elements */}
-      <div className="halloween-intro__decorations">
+      <div className="halloween-intro__decorations" aria-hidden="true">
         <span className="decoration decoration--top-left">👻</span>
         <span className="decoration decoration--top-right">💀</span>
         <span className="decoration decoration--bottom-left">🕷️</span>
