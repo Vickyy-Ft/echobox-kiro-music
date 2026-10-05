@@ -88,8 +88,16 @@ export function HalloweenIntro({ onComplete }) {
           <span className="bat bat--delay-2">🦇</span>
         </div>
 
+        <button 
+          className="halloween-intro__button"
+          onClick={handleDismiss}
+          aria-label="Enter EchoBox Music Studio"
+        >
+          Enter EchoBox Studio
+        </button>
+
         <p className="halloween-intro__hint" id="halloween-intro-hint">
-          Click anywhere, press Enter, or Escape to enter...
+          Or press Enter / Escape to continue
         </p>
       </div>
 

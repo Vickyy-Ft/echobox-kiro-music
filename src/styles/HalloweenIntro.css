@@ -233,6 +233,50 @@
   }
 }
 
+/* Button */
+.halloween-intro__button {
+  display: inline-block;
+  padding: var(--space-3) var(--space-6);
+  margin: var(--space-5) 0 var(--space-4);
+  
+  background: linear-gradient(135deg, #FF0000, #CC0000);
+  color: #ffffff;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  border: 2px solid #FF6666;
+  border-radius: 8px;
+  cursor: pointer;
+  
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+  
+  animation: button-pulse 2s ease-in-out infinite;
+}
+
+.halloween-intro__button:hover {
+  background: linear-gradient(135deg, #FF3333, #FF0000);
+  box-shadow: 0 6px 25px rgba(255, 0, 0, 0.6);
+  transform: scale(1.05);
+}
+
+.halloween-intro__button:active {
+  transform: scale(0.98);
+}
+
+.halloween-intro__button:focus-visible {
+  outline: 3px solid #FFAAAA;
+  outline-offset: 2px;
+}
+
+@keyframes button-pulse {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(255, 0, 0, 0.7);
+  }
+}
+
 /* Hint */
 .halloween-intro__hint {
   font-size: var(--font-size-sm);
