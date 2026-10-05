@@ -3,24 +3,26 @@ import { clampSeek, nextTrack, previousTrack } from '../utils/queueUtils';
 import { writePersistedVolume } from '../utils/storageUtils';
 
 /**
- * Maps a MediaError object to a human-readable error string.
+ * Maps a MediaError object to a human-readable, actionable error message.
+ *
+ * Provides clear guidance for users on what went wrong and what they can try.
  *
  * @param {MediaError|null} mediaError
  * @returns {string}
  */
 export function buildErrorMessage(mediaError) {
-  if (!mediaError) return 'An unknown audio error occurred.';
+  if (!mediaError) return 'Audio playback failed. Try reloading the page or selecting a different track.';
   switch (mediaError.code) {
     case MediaError.MEDIA_ERR_ABORTED:
-      return 'Playback was aborted.';
+      return 'Playback was interrupted. Try pressing play again.';
     case MediaError.MEDIA_ERR_NETWORK:
-      return 'A network error interrupted loading.';
+      return 'Network error: unable to load audio. Check your connection and try again.';
     case MediaError.MEDIA_ERR_DECODE:
-      return 'The audio file could not be decoded.';
+      return 'Audio file is corrupted or unreadable. Try a different track.';
     case MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED:
-      return 'The audio format is not supported.';
+      return 'Audio format not supported by your browser. Try another track.';
     default:
-      return 'An unknown audio error occurred.';
+      return 'Audio playback failed. Try reloading the page or selecting a different track.';
   }
 }
 
@@ -121,9 +123,9 @@ export function useAudioEngine(dispatch) {
         shouldPlayRef.current = false;
         audio.play().catch((err) => {
           // AbortError is normal when src changes rapidly — ignore silently.
-          // NotAllowedError means autoplay was blocked — surface it.
+          // NotAllowedError means autoplay was blocked — surface it with actionable guidance.
           if (err.name === 'NotAllowedError') {
-            dispatch({ type: 'SET_ERROR', error: 'Autoplay blocked. Press play to start.' });
+            dispatch({ type: 'SET_ERROR', error: 'Autoplay blocked by browser. Tap or click the play button to start.' });
           }
         });
       }
