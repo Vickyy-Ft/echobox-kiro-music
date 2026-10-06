@@ -469,9 +469,18 @@ Recommend your favorite music to friends by exporting and sharing playlists:
 
 ### Backup Your Playlists
 
-1. **Regularly export** all your playlists
-2. **Store the files** in a cloud folder (Google Drive, Dropbox, OneDrive)
-3. **If you clear browser data**, re-import your playlists to restore them instantly
+Protect your music collections with regular backups:
+
+1. **Regularly export** all your important playlists
+2. **Store the files** in a cloud folder (Google Drive, Dropbox, OneDrive, iCloud)
+3. **Set a reminder** to backup monthly or after significant playlist changes
+4. **If you clear browser data**, simply re-import your playlists to restore them instantly
+
+**Backup Best Practices:**
+- Use descriptive filenames with dates: `favorites_2026-01.json`
+- Keep backups in multiple locations for redundancy
+- Version your important playlists (favorite_v1, favorite_v2, etc.)
+- Export after significant playlist changes
 
 ## 🤝 Contributing
 
