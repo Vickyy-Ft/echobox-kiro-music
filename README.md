@@ -403,7 +403,7 @@ Your music preferences and playlists never leave your computer.
 
 ## 📤 Playlist Import / Export
 
-EchoBox lets you save, share, and import playlists as JSON files. This is perfect for backing up your collections or sharing music recommendations with friends.
+Share your music collections and backup your playlists as JSON files. Perfect for sharing music recommendations with friends or safeguarding your collections.
 
 ### Exporting a Playlist
 
