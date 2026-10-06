@@ -528,10 +528,14 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## 🙏 Acknowledgments
 
-- Built as part of the **Kiro University Challenge 2026**
-- Architecture guided by the **EchoBox React Audio Power**
-- Inspired by modern music streaming interfaces
-- Special thanks to the React and Vite communities
+EchoBox Music was built with support from amazing tools and communities:
+
+- **Kiro University Challenge 2026** — Inspiration and framework for this project
+- **[EchoBox React Audio Power](https://kiro.dev/powers)** — Architectural guidance for React audio players
+- **React and Vite communities** — For excellent documentation and open-source contributions
+- **fast-check maintainers** — Property-based testing framework excellence
+- **Open-source contributors** — For countless libraries making web development better
+- **Everyone using EchoBox** — Your feedback drives continuous improvement
 
 ## ♿ Accessibility & Inclusive Design
 
