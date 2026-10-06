@@ -257,14 +257,16 @@ EchoBox uses a carefully crafted **dark theme design system** built entirely wit
 
 ## 🛠️ Technology Stack
 
-- **React 19** - UI framework
-- **Vite 8** - Build tool and dev server
-- **HTML5 Audio API** - Native audio playback
-- **localStorage** - Client-side persistence
-- **Vitest** - Testing framework
-- **@testing-library/react** - Component testing
-- **fast-check** - Property-based testing
-- **ESLint** - Code linting
+EchoBox Music is built with proven, modern technologies that provide excellent developer experience and performance:
+
+- **React 19** - Latest React version with concurrent rendering and automatic batching
+- **Vite 8** - Lightning-fast build tool with hot module replacement and optimized production builds
+- **HTML5 Audio API** - Native browser audio capabilities for MP3 and WAV playback
+- **localStorage** - Browser-native client-side persistence for playlists and preferences
+- **Vitest** - Fast, Jest-compatible unit testing framework with native ESM support
+- **@testing-library/react** - Accessible component testing focused on user behavior
+- **fast-check** - Property-based testing for finding edge cases and verifying invariants
+- **ESLint** - Static code analysis and style consistency enforcement
 
 ## 🎯 Browser Support
 
