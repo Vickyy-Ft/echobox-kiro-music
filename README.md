@@ -382,10 +382,11 @@ Navigate through all interactive controls using Tab and Shift+Tab:
 
 ### Tips for Keyboard Users
 
-- **Visible Focus Indicators**: Every interactive element displays a clear, bright outline when focused using keyboard navigation for easy visibility
-- **No Mouse Required**: The entire application is fully operable using keyboard controls only
-- **Screen Reader Friendly**: All controls include comprehensive ARIA labels for screen reader compatibility
-- **Play Button Disabled?**: If the play button appears dimmed or disabled, select a track first to enable playback
+- **Visible Focus Indicators** — Every interactive element displays a clear, bright outline when focused using keyboard navigation
+- **No Mouse Required** — The entire application is fully operable using only keyboard shortcuts
+- **Screen Reader Compatible** — All controls include comprehensive ARIA labels for screen reader users
+- **Consistent Navigation** — Tab order follows logical document flow for predictable navigation
+- **Play Button Disabled?** — If the play button appears dimmed, select a track from the list first to enable playback
 
 ## 🔐 Privacy & Data
 
