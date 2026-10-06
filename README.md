@@ -105,6 +105,8 @@ This command starts a local server to preview your optimized production build an
 
 EchoBox Music includes a comprehensive automated test suite with unit tests, component tests, integration tests, and property-based tests powered by fast-check.
 
+**Testing Stack:** Vitest + @testing-library/react + fast-check for comprehensive coverage
+
 ```bash
 npm test
 ```
