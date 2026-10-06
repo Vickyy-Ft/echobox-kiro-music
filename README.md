@@ -27,9 +27,9 @@ A modern, feature-rich web music player built with React and Vite. EchoBox Music
 - **Persistent Storage** - All playlists automatically saved to localStorage and survive page refreshes
 
 ### 🔍 **Search & Discovery**
-- **Real-time Search** - Filter tracks by title or artist as you type
-- **Track Catalog** - Browse your complete music collection
-- **Active Track Highlighting** - Always know what's playing
+- **Real-time Search** - Filter tracks instantly by title or artist name as you type, with instant results
+- **Track Catalog** - Browse and explore your complete music collection with full track metadata
+- **Active Track Highlighting** - Visual indicator always shows which track is currently playing
 
 ### 🎨 **Modern UI/UX**
 - **Dark/Light Theme Toggle** - Choose your preferred viewing experience
