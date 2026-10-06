@@ -539,7 +539,7 @@ EchoBox Music was built with support from amazing tools and communities:
 
 ## ♿ Accessibility & Inclusive Design
 
-EchoBox Music is designed to be fully accessible to all users, including those using assistive technologies.
+EchoBox Music is designed to be fully accessible to all users, including those using assistive technologies. We're committed to inclusive design principles.
 
 ### WCAG AA Compliance
 
