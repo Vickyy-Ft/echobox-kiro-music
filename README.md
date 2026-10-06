@@ -188,7 +188,7 @@ echobox-kiro-music/
 
 ## 🏗️ Architecture
 
-EchoBox Music follows a **centralized state management** pattern with clear separation of concerns:
+EchoBox Music implements a **scalable, event-driven architecture** with clear separation of concerns and unidirectional data flow.
 
 ### State Management
 - **React Context + useReducer** - Single source of truth for playback state
