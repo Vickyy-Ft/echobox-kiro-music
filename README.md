@@ -453,9 +453,19 @@ Add a previously exported playlist to your collection:
 
 ### Sharing Playlists
 
-1. **Export your playlist** as JSON (see Export section above)
-2. **Share the file** via email, chat, cloud storage, or any file-sharing method
-3. Your friend can **import the playlist** into their own EchoBox instance
+Recommend your favorite music to friends by exporting and sharing playlists:
+
+1. **Export your playlist** as described above
+2. **Share the JSON file** via email, cloud storage, chat, or any file-sharing method
+3. **Your friend imports** the file using the import feature
+4. **Their EchoBox** now has your entire playlist with all metadata preserved
+
+**Sharing Methods:**
+- Email attachment (for small playlists)
+- Cloud storage (Google Drive, Dropbox, OneDrive)
+- Discord/Slack file upload
+- GitHub Gist (for public sharing)
+- Any file-sharing service
 
 ### Backup Your Playlists
 
