@@ -103,11 +103,13 @@ This command starts a local server to preview your optimized production build an
 
 ## 🧪 Testing
 
-EchoBox Music includes a comprehensive test suite with unit tests, component tests, and property-based tests.
+EchoBox Music includes a comprehensive automated test suite with unit tests, component tests, integration tests, and property-based tests powered by fast-check.
 
 ```bash
 npm test
 ```
+
+The test suite runs in parallel for maximum speed and provides immediate feedback during development.
 
 **Test Coverage:**
 - ✅ Reducer action handlers (unit tests)
