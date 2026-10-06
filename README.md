@@ -270,26 +270,27 @@ EchoBox Music is built with proven, modern technologies that provide excellent d
 
 ## 🎯 Browser Support
 
-EchoBox Music works on all modern browsers that support HTML5 Audio:
+EchoBox Music is designed to work seamlessly on all modern browsers with HTML5 Audio API support.
 
-| Browser | Support | Notes |
-|---------|---------|-------|
-| **Chrome/Edge** | 90+ | Complete feature support including keyboard shortcuts and all accessibility features |
-| **Firefox** | 88+ | Full support with excellent audio quality and performance |
-| **Safari** | 14+ | Complete support on macOS and iOS devices with all features |
-| **Opera** | 76+ | Chromium-based browser with full feature support |
-| **Mobile Browsers** | Modern | Responsive design fully optimized for touch-based mobile interaction |
+| Browser | Version | Support | Notes |
+|---------|---------|---------|-------|
+| **Chrome** | 90+ | ✅ Complete | Full feature support including keyboard shortcuts and all accessibility features |
+| **Edge** | 90+ | ✅ Complete | Chromium-based with identical feature parity to Chrome |
+| **Firefox** | 88+ | ✅ Complete | Excellent audio quality and consistent performance across platforms |
+| **Safari** | 14+ | ✅ Complete | Full support on macOS and iOS with all interactive features |
+| **Opera** | 76+ | ✅ Complete | Chromium-based browser with complete feature support |
+| **Mobile Browsers** | Modern | ✅ Complete | Responsive design fully optimized for touch interaction |
 
-**Requirements:**
-- JavaScript enabled (obviously)
-- localStorage available for playlist persistence
-- HTML5 Audio API support
-- Modern ES2020+ JavaScript features
+**Technical Requirements:**
+- JavaScript must be enabled (required for React and all features)
+- localStorage available for playlist and preference persistence
+- HTML5 Audio API support (universal on modern browsers)
+- Modern ES2020+ JavaScript features (widely supported)
 
 **Known Limitations:**
 - Autoplay may be blocked by browser policy (user must click play first)
-- Volume control may be disabled on some mobile devices
-- Seek functionality depends on audio CORS headers
+- Volume control may be disabled on some mobile devices for OS-level control
+- Seek functionality requires proper CORS headers on audio files
 
 ## 📝 Adding Audio Tracks
 
