@@ -202,9 +202,9 @@ EchoBox Music implements a **scalable, event-driven architecture** with clear se
 - **Load Abortion** - Prevents stale audio loads from interrupting rapid track switching
 
 ### Playlist Management
-- **Independent Hook** - Separate from playback state
-- **Write-Then-Set** - Persists to localStorage before updating state
-- **Full Denormalization** - Stores complete track objects for catalog independence
+- **Independent Hook** - Playlist state management completely separate from playback engine
+- **Write-Then-Set** - Changes always persist to localStorage before updating in-memory state
+- **Full Denormalization** - Playlists store complete track objects for resilience to catalog changes
 
 ### Data Flow
 ```
