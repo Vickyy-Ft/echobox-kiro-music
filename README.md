@@ -81,11 +81,13 @@ Quick setup to get EchoBox running on your machine:
 
 ### Build for Production
 
+Create an optimized production-ready build:
+
 ```bash
 npm run build
 ```
 
-The optimized production build will be generated in the `dist/` folder.
+The optimized production build will be generated in the `dist/` folder with minified assets and performance optimizations.
 
 ### Preview Production Build
 
