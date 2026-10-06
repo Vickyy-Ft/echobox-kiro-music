@@ -52,8 +52,9 @@ All features work together seamlessly to provide a cohesive, enjoyable listening
 
 ### Prerequisites
 
-- **Node.js** 16+ (recommended: 18 or 20)
-- **npm** 7+ or **yarn** 1.22+
+- **Node.js** 16 or higher (Node.js 18 LTS or 20 LTS strongly recommended for best compatibility)
+- **npm** 7 or higher, or **yarn** 1.22 or higher
+- A modern web browser with HTML5 Audio API support
 
 ### Installation
 
