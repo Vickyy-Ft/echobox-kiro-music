@@ -583,11 +583,14 @@ Complete keyboard control without mouse:
 
 ### Motor Accessibility
 
-- Large touch targets on mobile (minimum 44×44 pixels)
-- Keyboard-only operation fully supported
-- No gestures required
-- Sufficient spacing between interactive elements
-- Debounced controls prevent accidental triggers
+Designed for users with limited or no fine motor control:
+
+- **Large touch targets** — Minimum 44×44 pixels on mobile for finger interaction
+- **Keyboard-only operation** — Every feature accessible without mouse
+- **No complex gestures** — Simple click or tap interactions throughout
+- **Adequate spacing** — Sufficient distance between clickable elements
+- **Debounced controls** — Prevents accidental triggers from rapid interactions
+- **No time-based interactions** — No features that require precise timing
 
 ## 🆘 Troubleshooting
 
