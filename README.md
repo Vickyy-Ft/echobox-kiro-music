@@ -207,20 +207,25 @@ EchoBox Music implements a **scalable, event-driven architecture** with clear se
 - **Full Denormalization** - Playlists store complete track objects for resilience to catalog changes
 
 ### Data Flow
+
+The unidirectional data flow ensures predictable state changes and easier debugging:
+
 ```
-User Interaction
+User Interaction (click, type, keyboard)
     ↓
-Component calls audioEngine method
+Component calls audio engine or playlist manager method
     ↓
-Audio element updates → Audio event fires
+Method updates audio element or localStorage
     ↓
-Event listener dispatches action
+Audio event fires or storage completes
     ↓
-Reducer updates state
+Event listener dispatches reducer action with payload
     ↓
-Context value changes
+Reducer computes new state based on current state + action
     ↓
-Components re-render
+Context value updates and notifies all subscribers
+    ↓
+Connected components re-render with latest state
 ```
 
 ## 🎨 Design System
