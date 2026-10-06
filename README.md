@@ -436,18 +436,20 @@ Save a playlist to your computer as a JSON file:
 
 ### Importing a Playlist
 
-1. **Open EchoBox** in your web browser
-2. **Locate and click the "📁 Import Playlist"** button in the Sidebar
-3. **Select a `.json` file** from your computer's file system
-4. The playlist is **instantly added** to your collection with all tracks preserved
-5. A success confirmation message will appear; any errors display helpful error messages
+Add a previously exported playlist to your collection:
 
-**Tips for importing:**
-- Only valid `.json` files are accepted
-- Imported playlists keep their original name and track order
-- If a playlist with the same name exists, it's imported as a separate copy
-- Track audio files must still be available (same `src` paths)
-- If a track's audio file is missing, the import still succeeds but playback will fail for that track
+1. **Open EchoBox** in your web browser
+2. **Locate the import button** — "📁 Import Playlist" in the Sidebar
+3. **Select a JSON file** from your computer's file system
+4. The playlist is **instantly added** with all tracks preserved
+5. **Confirmation message** appears; any errors display helpful guidance
+
+**Important Notes:**
+- Only valid `.json` files exported from EchoBox can be imported
+- Imported playlists keep their original names and track order
+- Duplicate names are allowed (imports as a separate copy)
+- Track audio files must still be available at their original paths
+- Missing audio files don't prevent import; playback will fail for those tracks only
 
 ### Sharing Playlists
 
