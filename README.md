@@ -50,6 +50,8 @@ All features work together seamlessly to provide a cohesive, enjoyable listening
 
 ## 🚀 Getting Started
 
+Get EchoBox Music running on your machine in just a few minutes with these simple steps.
+
 ### Prerequisites
 
 - **Node.js** 16 or higher (Node.js 18 LTS or 20 LTS strongly recommended for best compatibility)
