@@ -234,13 +234,13 @@ EchoBox uses a carefully crafted **dark theme design system** built entirely wit
 
 ### Color Palette (Dark Theme)
 ```css
---color-bg-base:      #0f0f13  /* App background */
---color-bg-surface:   #1a1a24  /* Cards, bars */
---color-bg-elevated:  #24243a  /* Hover states */
---color-text-primary: #e8e8f0  /* Main text */
---color-text-secondary: #9898b0 /* Muted text */
---color-accent:       #7c6af7  /* Purple accent */
---color-error:        #ff5a5f  /* Error states */
+--color-bg-base:      #0f0f13  /* Main app background, darkest */
+--color-bg-surface:   #1a1a24  /* Card and surface backgrounds */
+--color-bg-elevated:  #24243a  /* Hover and active states */
+--color-text-primary: #e8e8f0  /* Main text, high contrast */
+--color-text-secondary: #9898b0 /* Muted text, reduced contrast */
+--color-accent:       #7c6af7  /* Interactive elements and highlights */
+--color-error:        #ff5a5f  /* Error states and warnings */
 ```
 
 ### Typography
