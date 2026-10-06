@@ -196,10 +196,10 @@ EchoBox Music implements a **scalable, event-driven architecture** with clear se
 - **Memoized Context** - Optimized to prevent unnecessary re-renders during high-frequency audio updates
 
 ### Audio Engine
-- **Single Audio Instance** - One HTMLAudioElement for the entire app lifecycle
-- **Event-Driven** - Audio events dispatch actions to the reducer
-- **Debounced Controls** - 50ms debounce prevents audio glitching
-- **Load Abortion** - Prevents stale audio loads during rapid track switching
+- **Single Audio Instance** - One centralized HTMLAudioElement for the entire application lifecycle
+- **Event-Driven Architecture** - Audio events dispatch actions to reducer for state synchronization
+- **Debounced Controls** - 50ms debounce window prevents audio glitching during rapid play/pause
+- **Load Abortion** - Prevents stale audio loads from interrupting rapid track switching
 
 ### Playlist Management
 - **Independent Hook** - Separate from playback state
