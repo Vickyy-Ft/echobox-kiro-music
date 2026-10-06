@@ -112,12 +112,12 @@ npm test
 The test suite runs in parallel for maximum speed and provides immediate feedback during development.
 
 **Test Coverage:**
-- ✅ Reducer action handlers (unit tests)
-- ✅ Audio engine behavior (unit + property tests with fast-check)
-- ✅ Playlist manager CRUD operations (unit + property tests)
-- ✅ Component rendering (@testing-library/react)
-- ✅ Utility functions (formatDuration, filterTracks, queueUtils, storageUtils)
-- ✅ Property-based invariants (20 properties validated)
+- ✅ Reducer action handlers with comprehensive state transitions (unit tests)
+- ✅ Audio engine lifecycle and media event handling (unit + property tests)
+- ✅ Playlist CRUD operations with edge cases (unit + property tests)
+- ✅ Component rendering and user interactions (@testing-library/react)
+- ✅ Utility functions with property-based correctness validation (formatDuration, filterTracks, queueUtils, storageUtils)
+- ✅ 20+ property-based invariants validated across 200+ iterations each
 
 ## 📁 Project Structure
 
