@@ -407,12 +407,14 @@ Share your music collections and backup your playlists as JSON files. Perfect fo
 
 ### Exporting a Playlist
 
+Save a playlist to your computer as a JSON file:
+
 1. **Open EchoBox** in your web browser
-2. **Locate and expand a playlist** in the Sidebar by clicking on its name
-3. **Click the download arrow icon** (↓) positioned next to the playlist name
-4. Your browser **automatically downloads a JSON file** to your default Downloads folder
-   - The filename follows the format: `playlist-name_playlist.json`
-   - Safe to rename, move, or organize the file in folders as needed
+2. **Locate the playlist** in the Sidebar
+3. **Click the download icon** (↓) next to the playlist name
+4. Your browser **automatically downloads** a JSON file to your Downloads folder
+   - Filename format: `playlist-name_playlist.json`
+   - You can safely rename, move, or organize the file as needed
 
 **Example exported file:**
 ```json
