@@ -1,6 +1,6 @@
 # 🎵 EchoBox Music
 
-A modern, feature-rich web music player built with React & Vite. EchoBox Music delivers a powerful and responsive audio experience for playing local MP3 and WAV files directly in your browser, featuring comprehensive keyboard shortcuts, flexible theme customization, and advanced playlist management capabilities.
+A modern, feature-rich web music player built with React + Vite. EchoBox Music delivers a powerful and responsive audio experience for playing local MP3 and WAV files directly in your browser, featuring comprehensive keyboard shortcuts, flexible theme customization, and advanced playlist management capabilities.
 
 > **Built with ❤️ as part of Kiro University Challenge 2026**
 
