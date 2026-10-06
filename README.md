@@ -39,10 +39,10 @@ A modern, feature-rich web music player built with React and Vite. EchoBox Music
 - **Fixed Now Playing Bar** - Always-visible player controls at the bottom for continuous access
 
 ### 💾 **Smart Persistence**
-- **Volume Memory** - Your preferred volume level is remembered
-- **Theme Preference** - Your chosen theme persists across sessions
-- **Playlist Storage** - All playlists persist across sessions
-- **Queue State** - Active queue maintained during playback
+- **Volume Memory** - Your preferred volume level is automatically saved and restored on every session
+- **Theme Preference** - Your chosen theme persists permanently across browser sessions
+- **Playlist Storage** - All custom playlists are automatically saved and survive page refreshes
+- **Queue State** - Current playback queue is maintained and restored during active playback sessions
 
 ## 🚀 Getting Started
 
