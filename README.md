@@ -360,14 +360,14 @@ Master EchoBox Music entirely from your keyboard with these comprehensive shortc
 
 | Shortcut | Action | Use Case |
 |----------|--------|----------|
-| **Spacebar** | Play / Pause | Quick toggle for playback |
+| **Spacebar** | Play / Pause | Quick toggle for playback control |
 | **→ Right Arrow** | Next Track | Skip to the next song in queue |
-| **← Left Arrow** | Previous Track | Jump to previous song; press again within 3 seconds to restart current track |
-| **Tab** | Navigate Focus | Move focus through all interactive elements (buttons, inputs, playlists) |
-| **Shift + Tab** | Focus Backward | Navigate backward through interactive elements |
-| **Enter** | Activate / Select | Confirm dialogs, select tracks, create playlists |
-| **Escape** | Close / Dismiss | Close the Halloween intro splash screen |
-| **0–1 (numeric)** | Set Volume | *Future feature* — 0 = mute, 1 = max (when implemented) |
+| **← Left Arrow** | Previous Track | Jump to previous song (press twice within 3 seconds to restart) |
+| **Tab** | Navigate Forward | Move focus through all interactive elements systematically |
+| **Shift + Tab** | Navigate Backward | Move focus backward through interactive elements |
+| **Enter** | Activate / Select | Confirm dialogs, select tracks, and create playlists |
+| **Escape** | Close / Dismiss | Close modal dialogs and the Halloween intro screen |
+| **↑ / ↓ Arrows** | Volume / Seek | Adjust volume on slider or seek within track |
 
 ### Focus Navigation
 
