@@ -12,12 +12,12 @@ A modern, feature-rich web music player built with React and Vite. EchoBox Music
 ## ✨ Features
 
 ### 🎧 **Playback Controls**
-- **Play/Pause** - Smooth playback with debounced controls and keyboard shortcuts (Spacebar)
-- **Seek** - Jump to any position in a track with real-time progress tracking
-- **Volume Control** - Adjust volume with persistence across sessions
-- **Previous/Next** - Navigate through your queue with arrow keys
-- **Auto-Advance** - Automatically plays the next track when one finishes
-- **⌨️ Keyboard Shortcuts** - Control playback without touching your mouse!
+- **Play/Pause** - Smooth, responsive playback with debounced controls and instant keyboard shortcuts (press Spacebar)
+- **Seek** - Jump to any position in a track with precision and real-time progress visualization
+- **Volume Control** - Adjust volume levels smoothly with persistence across browser sessions
+- **Previous/Next** - Navigate through your queue seamlessly using arrow keys for quick track switching
+- **Auto-Advance** - Automatically transitions to the next track when the current one finishes
+- **⌨️ Keyboard Shortcuts** - Control all playback features using only your keyboard, no mouse required!
 
 ### 📝 **Playlist Management**
 - **Create Playlists** - Organize your music into custom collections
