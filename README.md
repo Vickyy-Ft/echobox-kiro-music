@@ -58,6 +58,8 @@ All features work together seamlessly to provide a cohesive, enjoyable listening
 
 ### Installation
 
+Quick setup to get EchoBox running on your machine:
+
 1. **Clone the repository**
    ```bash
    git clone https://github.com/Vickyy-Ft/echobox-kiro-music.git
@@ -75,9 +77,7 @@ All features work together seamlessly to provide a cohesive, enjoyable listening
    ```
 
 4. **Open your browser**
-   ```
-   http://localhost:5173
-   ```
+   Navigate to `http://localhost:5173` in your web browser to view the application
 
 ### Build for Production
 
