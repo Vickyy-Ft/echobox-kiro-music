@@ -191,9 +191,9 @@ echobox-kiro-music/
 EchoBox Music implements a **scalable, event-driven architecture** with clear separation of concerns and unidirectional data flow.
 
 ### State Management
-- **React Context + useReducer** - Single source of truth for playback state
-- **Reducer Pattern** - All state transitions are explicit and testable
-- **Memoized Context** - Prevents unnecessary re-renders during high-frequency updates
+- **React Context + useReducer** - Single source of truth for all playback state and player configuration
+- **Reducer Pattern** - All state transitions are explicit, testable, and traceable
+- **Memoized Context** - Optimized to prevent unnecessary re-renders during high-frequency audio updates
 
 ### Audio Engine
 - **Single Audio Instance** - One HTMLAudioElement for the entire app lifecycle
