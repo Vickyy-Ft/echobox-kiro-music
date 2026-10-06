@@ -230,6 +230,8 @@ Connected components re-render with latest state
 
 ## 🎨 Design System
 
+EchoBox uses a carefully crafted **dark theme design system** built entirely with CSS custom properties for maximum flexibility and consistency.
+
 ### Color Palette (Dark Theme)
 ```css
 --color-bg-base:      #0f0f13  /* App background */
