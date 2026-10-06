@@ -249,7 +249,11 @@ EchoBox uses a carefully crafted **dark theme design system** built entirely wit
 - **Scale:** xs (12px), sm (14px), base (16px), lg (18px), xl (20px) for consistent text hierarchy
 
 ### Spacing Scale
-- **xs:** 4px, **sm:** 8px, **md:** 16px, **lg:** 24px, **xl:** 32px
+- **xs:** 4px (minimal spacing for tight layouts)
+- **sm:** 8px (small components and gaps)
+- **md:** 16px (standard section spacing)
+- **lg:** 24px (major component spacing)
+- **xl:** 32px (large layout spacing)
 
 ## 🛠️ Technology Stack
 
