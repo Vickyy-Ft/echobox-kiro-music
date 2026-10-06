@@ -390,12 +390,16 @@ Navigate through all interactive controls using Tab and Shift+Tab:
 
 ## 🔐 Privacy & Data
 
-EchoBox Music is **100% client-side** and requires **no backend**:
-- ✅ No user accounts or authentication
-- ✅ No external API calls
-- ✅ No data collection or tracking
-- ✅ All data stored locally in your browser
-- ✅ Works offline after initial load
+EchoBox Music is **100% client-side** and maintains your privacy as a core principle:
+
+- ✅ **No user accounts or authentication** — No sign-up required
+- ✅ **No external API calls** — Everything runs locally in your browser
+- ✅ **No data collection or tracking** — No analytics or user tracking
+- ✅ **All data stored locally** — Playlists and preferences in browser localStorage only
+- ✅ **Works offline** — Full functionality after initial load without internet
+- ✅ **No backend servers** — Pure client-side React application
+
+Your music preferences and playlists never leave your computer.
 
 ## 📤 Playlist Import / Export
 
