@@ -32,11 +32,11 @@ A modern, feature-rich web music player built with React and Vite. EchoBox Music
 - **Active Track Highlighting** - Visual indicator always shows which track is currently playing
 
 ### 🎨 **Modern UI/UX**
-- **Dark/Light Theme Toggle** - Choose your preferred viewing experience
-- **Custom Color Scheme** - Unique purple and teal accents
-- **Responsive Design** - Works beautifully on desktop and mobile
-- **Accessibility** - WCAG AA compliant with keyboard navigation and ARIA labels
-- **Fixed Now Playing Bar** - Always visible controls at the bottom
+- **Dark/Light Theme Toggle** - Switch between dark and light themes based on your preferences
+- **Custom Color Scheme** - Distinctive purple and teal accent colors throughout the interface
+- **Responsive Design** - Seamlessly adapts to desktop, tablet, and mobile screen sizes
+- **Accessibility** - Fully compliant with WCAG AA standards with complete keyboard navigation and ARIA labels
+- **Fixed Now Playing Bar** - Always-visible player controls at the bottom for continuous access
 
 ### 💾 **Smart Persistence**
 - **Volume Memory** - Your preferred volume level is remembered
