@@ -20,11 +20,11 @@ A modern, feature-rich web music player built with React and Vite. EchoBox Music
 - **⌨️ Keyboard Shortcuts** - Control all playback features using only your keyboard, no mouse required!
 
 ### 📝 **Playlist Management**
-- **Create Playlists** - Organize your music into custom collections
-- **Add/Remove Tracks** - Build your perfect playlist with ease
-- **Delete Playlists** - Clean up with confirmation prompts
-- **Import/Export** - Share playlists with friends via JSON files
-- **Persistent Storage** - Playlists saved to localStorage, survive page refreshes
+- **Create Playlists** - Organize your music into custom collections with personalized naming
+- **Add/Remove Tracks** - Build and modify your perfect playlist with intuitive track management
+- **Delete Playlists** - Remove playlists with protective confirmation prompts to prevent accidents
+- **Import/Export** - Share playlists with friends and backup collections via JSON file format
+- **Persistent Storage** - All playlists automatically saved to localStorage and survive page refreshes
 
 ### 🔍 **Search & Discovery**
 - **Real-time Search** - Filter tracks by title or artist as you type
