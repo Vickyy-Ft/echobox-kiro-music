@@ -125,51 +125,66 @@ The test suite runs in parallel for maximum speed and provides immediate feedbac
 
 ## 📁 Project Structure
 
+The EchoBox project follows a clear, modular organization for maintainability and scalability:
+
 ```
 echobox-kiro-music/
-├── public/
-│   ├── audio/                  # Audio files (MP3/WAV)
-│   ├── favicon.svg            # App icon
-│   └── icons.svg              # UI icons
-├── src/
-│   ├── components/
-│   │   ├── MainContent/       # Track list, search bar
-│   │   ├── NowPlayingBar/     # Playback controls, seek bar
-│   │   └── Sidebar/           # Playlist management
-│   ├── context/
-│   │   ├── PlayerContext.js   # React Context definition
-│   │   ├── PlayerProvider.jsx # Context provider with state
-│   │   └── playerReducer.js   # State reducer (all actions)
-│   ├── hooks/
-│   │   ├── useAudioEngine.js  # HTML5 Audio lifecycle hook
-│   │   └── usePlaylistManager.js # Playlist CRUD hook
-│   ├── utils/
-│   │   ├── filterTracks.js    # Search filtering logic
-│   │   ├── formatDuration.js  # Time formatting (MM:SS)
-│   │   ├── queueUtils.js      # Queue navigation helpers
-│   │   └── storageUtils.js    # localStorage persistence
-│   ├── styles/
-│   │   ├── variables.css      # CSS custom properties (theme)
-│   │   ├── global.css         # Global styles and resets
-│   │   ├── NowPlayingBar.css  # Fixed bottom bar styles
+├── public/                    # Static assets served by Vite
+│   ├── audio/                 # MP3 and WAV audio files
+│   ├── favicon.svg            # Application icon for browser tab
+│   └── icons.svg              # SVG icon sprite sheet
+├── src/                       # Application source code
+│   ├── components/            # React components organized by feature
+│   │   ├── MainContent/       # Track catalog and search functionality
+│   │   ├── NowPlayingBar/     # Player controls and progress display
+│   │   └── Sidebar/           # Playlist management interface
+│   ├── context/               # Global state management
+│   │   ├── PlayerContext.js   # React Context API definition
+│   │   ├── PlayerProvider.jsx # Context provider component wrapper
+│   │   └── playerReducer.js   # Redux-style reducer for all player actions
+│   ├── hooks/                 # Custom React hooks
+│   │   ├── useAudioEngine.js  # HTML5 Audio lifecycle and playback control
+│   │   └── usePlaylistManager.js # Playlist CRUD and localStorage persistence
+│   ├── utils/                 # Pure utility functions
+│   │   ├── filterTracks.js    # Real-time search and track filtering
+│   │   ├── formatDuration.js  # Time formatting (minutes:seconds)
+│   │   ├── queueUtils.js      # Queue navigation and seek helpers
+│   │   └── storageUtils.js    # localStorage persistence helpers
+│   ├── styles/                # CSS stylesheets
+│   │   ├── variables.css      # Design system tokens (colors, spacing)
+│   │   ├── global.css         # Global resets and app layout
+│   │   ├── NowPlayingBar.css  # Player control styles
 │   │   ├── Sidebar.css        # Playlist sidebar styles
-│   │   └── TrackList.css      # Track list styles
-│   ├── data/
-│   │   └── catalog.js         # Static track catalog
-│   ├── test/                  # Test files (unit, property, component)
-│   ├── App.jsx                # Root component
-│   ├── main.jsx               # React entry point
+│   │   └── TrackList.css      # Track list component styles
+│   ├── data/                  # Static data
+│   │   └── catalog.js         # Audio track catalog (static metadata)
+│   ├── test/                  # Test files
+│   │   ├── *.test.js/.jsx     # Unit and integration tests
+│   │   ├── *.property.test.js # Property-based tests
+│   │   └── setup.js           # Test environment configuration
+│   ├── App.jsx                # Root component entry point
+│   ├── main.jsx               # React 19 entry point
 │   └── index.css              # Global CSS imports
 ├── .kiro/                     # Kiro IDE configuration
-│   ├── specs/                 # Requirements and design specs
-│   ├── steering/              # Development guidelines
-│   ├── hooks/                 # Kiro automation hooks
-│   └── agents/                # Custom Kiro agents
-├── index.html                 # HTML entry point
-├── vite.config.js             # Vite configuration
-├── package.json               # Dependencies and scripts
-└── README.md                  # This file
+│   ├── specs/                 # Feature specifications and requirements
+│   ├── steering/              # Development guidelines and patterns
+│   ├── hooks/                 # Automation and CI/CD hooks
+│   └── agents/                # Custom Kiro execution agents
+├── index.html                 # HTML document root
+├── vite.config.js             # Vite build tool configuration
+├── package.json               # Dependencies, scripts, and metadata
+└── README.md                  # This comprehensive guide
 ```
+
+### Directory Purposes
+
+- **public/** - Static assets that don't require bundling
+- **src/components/** - React UI components organized by feature area
+- **src/context/** - Centralized state management and reducer logic
+- **src/hooks/** - Custom hooks for audio, playlists, and persistence
+- **src/utils/** - Reusable pure functions and helpers
+- **src/styles/** - CSS with design system variables
+- **src/test/** - All test files (unit, integration, property-based)
 
 ## 🏗️ Architecture
 
