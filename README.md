@@ -121,6 +121,8 @@ The test suite runs in parallel for maximum speed and provides immediate feedbac
 - ✅ Utility functions with property-based correctness validation (formatDuration, filterTracks, queueUtils, storageUtils)
 - ✅ 20+ property-based invariants validated across 200+ iterations each
 
+**Running tests locally:** Execute `npm test -- --run` for single run or `npm test` for watch mode during development
+
 ## 📁 Project Structure
 
 ```
