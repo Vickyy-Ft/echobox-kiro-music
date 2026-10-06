@@ -244,9 +244,9 @@ EchoBox uses a carefully crafted **dark theme design system** built entirely wit
 ```
 
 ### Typography
-- **Font Family:** Inter, -apple-system, BlinkMacSystemFont, Segoe UI, system-ui, sans-serif
-- **Base Size:** 16px
-- **Scale:** xs (12px), sm (14px), base (16px), lg (18px), xl (20px)
+- **Font Family:** Inter, -apple-system, BlinkMacSystemFont, Segoe UI, system-ui, sans-serif (system font stack)
+- **Base Size:** 16px (standard for web accessibility)
+- **Scale:** xs (12px), sm (14px), base (16px), lg (18px), xl (20px) for consistent text hierarchy
 
 ### Spacing Scale
 - **xs:** 4px, **sm:** 8px, **md:** 16px, **lg:** 24px, **xl:** 32px
