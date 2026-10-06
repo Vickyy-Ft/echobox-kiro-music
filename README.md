@@ -356,7 +356,7 @@ export const CATALOG = [
 
 ## ⌨️ Keyboard Shortcuts
 
-EchoBox Music provides complete keyboard control for power users and accessibility needs. Control playback entirely without your mouse using these essential shortcuts:
+Master EchoBox Music entirely from your keyboard with these comprehensive shortcuts. Perfect for power users, accessibility, and workflows where mouse use isn't practical.
 
 | Shortcut | Action | Use Case |
 |----------|--------|----------|
