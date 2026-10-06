@@ -294,32 +294,65 @@ EchoBox Music is designed to work seamlessly on all modern browsers with HTML5 A
 
 ## 📝 Adding Audio Tracks
 
-To add your own music to EchoBox:
+Customize EchoBox with your own music collection. Follow these steps to add and manage your audio files:
 
-1. **Add audio files** to `public/audio/`
-   - Supported formats: MP3, WAV
-   - Use URL-safe filenames (spaces → `%20`)
+### Step 1: Prepare Audio Files
 
-2. **Update the catalog** in `src/data/catalog.js`
-   ```javascript
-   export const CATALOG = [
-     {
-       id: 'unique-track-id',
-       title: 'Track Title',
-       artist: 'Artist Name',
-       album: 'Album Name',
-       duration: 197, // in seconds
-       src: '/audio/your-file.mp3',
-     },
-     // ... more tracks
-   ];
+1. Gather your audio files in MP3 or WAV format
+2. Place them in the `public/audio/` directory
+3. Use URL-safe filenames (replace spaces with hyphens or underscores)
+   - ✅ Good: `my-favorite-song.mp3`
+   - ❌ Avoid: `my favorite song.mp3`
+
+### Step 2: Update the Track Catalog
+
+Open `src/data/catalog.js` and add an entry for each track:
+
+```javascript
+export const CATALOG = [
+  {
+    id: 'unique-track-id',           // Unique identifier for the track
+    title: 'Track Title',             // Display name of the song
+    artist: 'Artist Name',            // Creator of the track
+    album: 'Album Name',              // Album or collection name
+    duration: 197,                    // Duration in seconds (calculate: minutes * 60 + seconds)
+    src: '/audio/your-file.mp3',     // Path to audio file relative to public/
+  },
+  // Add more tracks here...
+];
+```
+
+### Track Properties Explained
+
+- **id**: Unique identifier (use kebab-case, e.g., `track-001`)
+- **title**: Song name (displayed in player)
+- **artist**: Creator name (displayed in player)
+- **album**: Album or collection (for organization)
+- **duration**: Length in seconds (use `Math.round()` for accuracy)
+- **src**: Relative path from `public/` (always start with `/audio/`)
+
+### Step 3: Test and Deploy
+
+1. Restart the development server
+   ```bash
+   npm run dev
    ```
 
-3. **Rebuild and test**
+2. Verify tracks appear in the catalog and play correctly
+
+3. Build production version
    ```bash
    npm run build
-   npm run preview
    ```
+
+4. Deploy to production hosting
+
+### Pro Tips
+
+- **Duration calculation**: Use browser DevTools to check actual audio duration
+- **Audio quality**: 128-320 kbps MP3 offers good balance of quality and file size
+- **Batch additions**: You can add multiple tracks at once before rebuilding
+- **Updates**: Changes to catalog.js require server restart in development
 
 ## ⌨️ Keyboard Shortcuts
 
