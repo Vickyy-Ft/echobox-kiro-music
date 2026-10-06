@@ -91,9 +91,13 @@ The optimized production build will be generated in the `dist/` folder with mini
 
 ### Preview Production Build
 
+Test the production build locally before deployment:
+
 ```bash
 npm run preview
 ```
+
+This command starts a local server to preview your optimized production build and verify everything works correctly.
 
 ## 🧪 Testing
 
