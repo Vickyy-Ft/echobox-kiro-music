@@ -371,11 +371,14 @@ Master EchoBox Music entirely from your keyboard with these comprehensive shortc
 
 ### Focus Navigation
 
-- **Play/Pause Button**: Press **Tab** to reach the play button, then **Spacebar** to toggle
-- **Seek Bar**: **Tab** to focus, then **← →** arrows to seek backward/forward
-- **Volume Slider**: **Tab** to focus, then **← →** arrows to adjust volume
-- **Playlist Items**: **Tab** to navigate through playlists, **Enter** to play
-- **Track Items**: **Tab** to move through tracks, **Enter** to select
+Navigate through all interactive controls using Tab and Shift+Tab:
+
+- **Play/Pause Button** — Tab to reach it, then Spacebar to toggle playback state
+- **Seek Bar** — Tab to focus, then Arrow keys to seek backward or forward
+- **Volume Slider** — Tab to focus, then Arrow keys to adjust volume up or down
+- **Playlist Items** — Tab through all playlists, Enter to start playback
+- **Track Items** — Tab through all tracks, Enter to select and play
+- **All Controls** — Full keyboard navigation without requiring mouse
 
 ### Tips for Keyboard Users
 
