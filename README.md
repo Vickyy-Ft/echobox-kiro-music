@@ -484,21 +484,43 @@ Protect your music collections with regular backups:
 
 ## 🤝 Contributing
 
-Contributions are welcome! To contribute:
+Contributions are welcome! Help improve EchoBox Music for everyone.
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+### How to Contribute
+
+1. **Fork the repository** from GitHub
+2. **Create a feature branch**
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Make your changes** following project conventions
+4. **Commit with clear messages**
+   ```bash
+   git commit -m 'feat: add your feature description'
+   ```
+5. **Push to your branch**
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+6. **Open a Pull Request** with detailed description of changes
 
 ### Development Guidelines
 
-- Follow the existing code style and patterns
-- Write tests for new features
-- Update documentation as needed
-- Ensure all tests pass (`npm test`)
-- Verify production build works (`npm run build`)
+- **Code style**: Follow existing code patterns and conventions
+- **Testing**: Write tests for new features (`npm test`)
+- **Documentation**: Update README for user-facing changes
+- **Build verification**: Always run `npm run build` before submitting
+- **No console warnings**: Fix all linter warnings (`npm run lint`)
+- **Commit messages**: Use present tense ("add" not "added")
+
+### What We're Looking For
+
+- Bug fixes with reproduction steps
+- Performance improvements with benchmarks
+- Accessibility enhancements (WCAG compliance)
+- Documentation improvements
+- Feature requests with clear use cases
+- Test coverage improvements
 
 ## 📄 License
 
