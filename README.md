@@ -11,6 +11,8 @@ A modern, feature-rich web music player built with React and Vite. EchoBox Music
 
 ## ✨ Features
 
+EchoBox Music provides a complete music player experience with modern controls, flexible playlist management, and seamless integration across all your devices.
+
 ### 🎧 **Playback Controls**
 - **Play/Pause** - Smooth, responsive playback with debounced controls and instant keyboard shortcuts (press Spacebar)
 - **Seek** - Jump to any position in a track with precision and real-time progress visualization
